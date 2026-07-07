@@ -1,10 +1,9 @@
 # Doubao Skills
 
-本仓库每天同步 Doubao 本地工作区的 `.skills` 目录，保留当前 skill 文件、自动生成索引，并为每次变化生成独立说明。
+本仓库每天同步 Doubao 任务模式的 `.skills` 目录，保留当前 skill 文件、自动生成索引，并为每次变化生成独立说明。
 
 ## 同步概览
 
-- 源目录：`C:\Users\15805\AppData\Local\Doubao\User Data\Default\.doubao\agent_mode\workspace\.skills`
 - 同步目录：`skills/`
 - 任务计划：`DoubaoSkillsDailySync`，每天 18:00 运行
 - 当前 skill 数：37
