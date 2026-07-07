@@ -1,0 +1,7 @@
+interface:
+  display_name: "VOC与舆情调研"
+  short_description: "舆情监控、调研、社交媒体反馈收集、用户评价、品牌声量追踪时使用。支持微博、知乎、即刻、脉脉、B站、抖音等多平台的舆情搜索、内容筛选和原始帖子溯源。"
+  default_prompt: "Use $doubao-sentiment-tracker to collect recent public-opinion feedback for a product and cite original posts."
+
+policy:
+  allow_implicit_invocation: true

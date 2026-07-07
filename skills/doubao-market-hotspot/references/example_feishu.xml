@@ -1,0 +1,172 @@
+<!-- 范例：与 chat_example.md 同源。说明性注释不得写入实际交付 XML。 -->
+<!-- SECTION:document-header BEGIN -->
+<title align="left">市场解读 · 美联储 FOMC 与 A 股映射</title>
+<p align="left"><span text-color="gray">分析对象：美联储 6 月 FOMC 决议及点阵图对 A 股风险偏好与风格的影响｜时间窗：2026-06-26 决议发布起至 2026-06-30｜数据截至：2026-06-30 A 股收盘｜报告口径：研究讨论，不构成投资建议</span></p>
+<callout emoji="📌" background-color="light-gray" border-color="orange" text-color="gray">
+<p>以下内容仅为市场信息与逻辑分析，不构成任何投资买卖建议，务必结合自身风险承受能力决策。</p>
+</callout>
+<p align="left"><b>📌 点阵图偏鹰压制成长，但尚未触发全面 risk-off</b></p>
+<p align="left">美联储按兵不动符合预期，但内部对 <b>2026 年降息次数</b>预测中位数下修，市场重新定价「更长时间高利率」。对 A 股而言，这意味着外资偏好的成长风格继续承压，红利与低波方向相对占优；但若美债收益率上行斜率放缓，冲击仍属<b>风格层面</b>而非系统性流动性危机。</p>
+<!-- SECTION:document-metrics BEGIN -->
+<table>
+<colgroup><col width="180"/><col width="200"/><col width="180"/><col width="200"/></colgroup>
+<thead><tr>
+<th background-color="light-gray"><p align="center"><b><span text-color="orange">指标</span></b></p></th>
+<th background-color="light-gray"><p align="center"><b><span text-color="orange">数值</span></b></p></th>
+<th background-color="light-gray"><p align="center"><b><span text-color="orange">指标</span></b></p></th>
+<th background-color="light-gray"><p align="center"><b><span text-color="orange">数值</span></b></p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td background-color="light-gray" vertical-align="middle"><p align="left">10年期美债（收盘）</p></td>
+<td vertical-align="middle"><p align="left"><b>4.42%</b>[2]</p></td>
+<td background-color="light-gray" vertical-align="middle"><p align="left">北向资金（当日）</p></td>
+<td vertical-align="middle"><p align="left"><b>净流出 38 亿</b>[3]</p></td>
+</tr>
+<tr>
+<td background-color="light-gray" vertical-align="middle"><p align="left">创业板指（6月27日）</p></td>
+<td vertical-align="middle"><p align="left"><b>-1.1%</b>[3]</p></td>
+<td background-color="light-gray" vertical-align="middle"><p align="left">红利指数（6月27日）</p></td>
+<td vertical-align="middle"><p align="left">基本持平[3]</p></td>
+</tr>
+</tbody>
+</table>
+<!-- SECTION:document-metrics END -->
+<!-- SECTION:document-header END -->
+<!-- SECTION:h1-01-core-view BEGIN -->
+<hr/>
+<h1 align="left"><span text-color="orange">一、核心观点</span></h1>
+<p align="left"><b>本段结论：</b>短期偏<b>成长承压、红利相对占优</b>的风格切换；关键变量是<b>10 年期美债 4.5% 关口</b>。</p>
+<p align="left"><b>问题：</b>美联储 6 月会议后，对 A 股整体和风险偏好意味着什么？</p>
+<p align="left"><b>结论：</b>短期偏 <b>成长承压、红利相对占优</b> 的风格切换，不是全面熊市触发；关键变量是 <b>10 年期美债收益率 4.5%</b> 关口[1]——若突破并伴随美元走强，北向与成长板块压力会明显加大。</p>
+<p align="left"><b>改善：</b>美债收益率回落、北向连续净流入、成长相对红利收敛</p>
+<p align="left"><b>恶化：</b>通胀数据再超预期、点阵图进一步下修 2026 年降息次数、美元指数突破前高</p>
+<!-- SECTION:h1-01-core-view END -->
+<!-- SECTION:h1-02-increments BEGIN -->
+<hr/>
+<h1 align="left"><span text-color="orange">二、有哪些关键增量信息？</span></h1>
+<p align="left"><b>本段结论：本次增量集中在「降息路径下修」而非「意外加息」，市场反应是 re-pricing 而非 panic；对 A 股是风格变量变化，不是盈利预测全面下修。</b></p>
+<h3 align="left"><span text-color="orange">6月26日｜美国联邦储备委员会｜FOMC 维持利率不变，点阵图下调 2026 年降息预期</span></h3>
+<p align="left"><b>事实：</b>FOMC 将联邦基金利率目标区间维持在 <b>5.25%–5.50%</b>；更新的点阵图显示 2026 年底利率中位数较 3 月预测上移 <b>25bp</b>[1]。</p>
+<p align="left"><b>机制：</b>官方指引偏鹰，推升前端利率与美元走强预期，进而抬升全球风险资产折现率；对新兴市场同时施压外资配置意愿与汇率。</p>
+<p align="left"><b>市场反应：</b>决议公布后美元指数上涨约 <b>0.3%</b>，标普 500 当日小幅收跌[2]；相对「按兵不动、点阵图微调」的共识，短线定价偏 <b>hawkish 兑现</b>，尚未触发 panic 式抛售。</p>
+<p align="left"><b>后续验证：</b>盯 7 月就业与 CPI 是否强化「Higher for longer」；若数据走弱，点阵图的 hawkish 信号可能被市场部分 undo[1]。</p>
+<hr/>
+<h3 align="left"><span text-color="orange">6月27日｜证券时报｜A 股成长板块领跌，红利指数相对抗跌</span></h3>
+<p align="left"><b>事实：</b>6 月 27 日创业板指下跌约 <b>1.1%</b>，红利指数基本持平，两市成交额较前一交易日略缩量[3]。</p>
+<p align="left"><b>机制：</b>海外利率预期上移，高估值成长板块估值分母承压；红利资产因现金流确定性强，成为相对避风港。</p>
+<p align="left"><b>市场反应：</b>盘面呈现典型「分母冲击」下的<b>风格分化</b>，而非全面抛售[3]；成长跑输幅度 <b>1.1%</b> 与美债上行幅度大致匹配，说明市场按 re-pricing 而非盈利崩塌定价。</p>
+<p align="left"><b>后续验证：</b>若后续 3 个交易日成长继续跑输且量能萎缩，说明 re-pricing 仍在进行；若成长相对红利收敛，则冲击或已 price in[3]。</p>
+<hr/>
+<h3 align="left"><span text-color="orange">6月28日｜CME Group｜FedWatch 下修 2026 年降息押注</span></h3>
+<p align="left"><b>事实：</b>FedWatch 工具显示，市场隐含 2026 年 12 月前至少降息一次的概率较决议前下降约 <b>18 个百分点</b>[4]。</p>
+<p align="left"><b>机制：</b>期货定价与点阵图对齐，短端利率预期上移，长久期资产贴现率抬升，成长风格相对受损。</p>
+<p align="left"><b>市场反应：</b>6 月 28 日 2 年期美债收益率续升约 <b>3bp</b>，成长 ETF 资金延续<b>净流出</b>[4]；期货定价与点阵图对齐，市场认为 hawkish 路径尚未 price in 完毕。</p>
+<p align="left"><b>后续验证：</b>若后续就业数据走弱导致隐含降息概率回升，则 hawkish re-pricing 或进入平台期[4]。</p>
+<!-- SECTION:h1-02-increments END -->
+<!-- SECTION:h1-03-importance BEGIN -->
+<hr/>
+<h1 align="left"><span text-color="orange">三、这些信息为什么重要？</span></h1>
+<p align="left"><b>本段结论：重要之处在于「降息终点预期」被官方数据下修，而不仅是单次会议按兵不动；这改变了 2024 年下半年以来「降息交易」的基础假设。市场此前对 2026 年多次降息仍有 residual 预期，点阵图下修形成预期差，因此反应集中在利率敏感资产而非全市场盈利预测。</b></p>
+<p align="left">相比 5 月会议，真正变化是内部委员对 2026 年路径的中位数上移，以及鲍威尔记者会对通胀回落「仍需更多证据」的表述[1]。这意味着「政策转向」叙事从「何时降」转向「还要等多久」，对长久期资产不利。</p>
+<!-- SECTION:h1-03-importance END -->
+<!-- SECTION:h1-04-impact BEGIN -->
+<hr/>
+<h1 align="left"><span text-color="orange">四、上述信息如何影响市场？</span></h1>
+<p align="left"><b>本段结论：传导路径清晰：官方偏鹰先推美债与美元，再抬全球分母，最后映射到 A 股风格与外资；当前处于第三、四步，尚未看到全面外资撤离或成交崩塌。</b></p>
+<table>
+<colgroup><col width="90"/><col width="180"/><col width="200"/><col width="200"/></colgroup>
+<thead><tr>
+<th background-color="light-gray"><p align="center"><b><span text-color="orange">环节</span></b></p></th>
+<th background-color="light-gray"><p align="center"><b><span text-color="orange">变化</span></b></p></th>
+<th background-color="light-gray"><p align="center"><b><span text-color="orange">传导机制</span></b></p></th>
+<th background-color="light-gray"><p align="center"><b><span text-color="orange">市场含义</span></b></p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td background-color="light-gray" vertical-align="middle"><p align="center">政策指引</p></td>
+<td vertical-align="middle"><p align="left">点阵图 2026 年利率中位数上移[1]</p></td>
+<td vertical-align="middle"><p align="left">降息终点推后</p></td>
+<td vertical-align="middle"><p align="left">「宽货币」预期降温</p></td>
+</tr>
+<tr>
+<td background-color="light-gray" vertical-align="middle"><p align="center">海外利率</p></td>
+<td vertical-align="middle"><p align="left">2 年期美债收益率上行约 <b>12bp</b>[2]</p></td>
+<td vertical-align="middle"><p align="left">短端是估值折现锚</p></td>
+<td vertical-align="middle"><p align="left">成长板块估值承压</p></td>
+</tr>
+<tr>
+<td background-color="light-gray" vertical-align="middle"><p align="center">汇率外资</p></td>
+<td vertical-align="middle"><p align="left">美元指数走强，北向当日<b>净流出</b>[3]</p></td>
+<td vertical-align="middle"><p align="left">美元走强压制 EM 配置意愿</p></td>
+<td vertical-align="middle"><p align="left">外资重仓方向波动加大</p></td>
+</tr>
+<tr>
+<td background-color="light-gray" vertical-align="middle"><p align="center">A 股风格</p></td>
+<td vertical-align="middle"><p align="left">成长跑输红利约 <b>1.2pct</b>[3]</p></td>
+<td vertical-align="middle"><p align="left">资金向确定性迁移</p></td>
+<td vertical-align="middle"><p align="left"><b>风格切换</b>，非全面下跌</p></td>
+</tr>
+</tbody>
+</table>
+<!-- SECTION:h1-04-impact END -->
+<!-- SECTION:h1-05-viewpoints BEGIN -->
+<hr/>
+<h1 align="left"><span text-color="orange">五、各方有哪些值得关注的观点？</span></h1>
+<p align="left"><b>本段结论：官方与市场在「是否更 hawkish」上已无分歧，分歧在「hawkish 会持续多久、是否触发硬着陆」。</b></p>
+<p align="left"><b>📋 官方事实：</b>美联储强调决策依赖数据，未关闭降息大门，但需更多通胀回落证据[1]。</p>
+<p align="left"><b>📊 市场定价：</b>联邦基金期货隐含 2024 年降息次数减少，前端利率上行[2]。</p>
+<p align="left"><b>🏦 机构观点：</b>部分券商认为 A 股影响以风格为主，盈利预测下修幅度有限，关注红利与出海链[5]。</p>
+<p align="left"><b>🔄 反向证据：</b>若美国通胀与就业同步走弱，市场可能重新交易降息，成长风格或快速修复[2]。</p>
+<!-- SECTION:h1-05-viewpoints END -->
+<!-- SECTION:h1-06-signals BEGIN -->
+<hr/>
+<h1 align="left"><span text-color="orange">六、哪些信号会验证核心观点？哪些信号代表观点证伪？</span></h1>
+<p align="left"><b>本段结论：胜负手是「美债收益率方向 + 北向流向」；二者同时恶化才会把风格冲击升级为系统性 risk-off。</b></p>
+<table>
+<colgroup><col width="140"/><col width="180"/><col width="200"/><col width="200"/></colgroup>
+<thead><tr>
+<th background-color="light-gray"><p align="center"><b><span text-color="orange">信号</span></b></p></th>
+<th background-color="light-gray"><p align="center"><b><span text-color="orange">观察口径</span></b></p></th>
+<th background-color="light-gray"><p align="center"><b><span text-color="orange">改善</span></b></p></th>
+<th background-color="light-gray"><p align="center"><b><span text-color="orange">恶化</span></b></p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td background-color="light-gray" vertical-align="middle"><p align="center">信号1 · 📌 10 年期美债收益率</p></td>
+<td vertical-align="middle"><p align="left">每日收盘收益率与 5 日均值；关口 <b>4.5%</b></p></td>
+<td vertical-align="middle"><p align="left">✅ 收益率回落至 <b>4.5%</b> 下方，分母压力减轻，成长相对红利收敛</p></td>
+<td vertical-align="middle"><p align="left">❌ 有效突破 <b>4.5%</b> 并放量，外资与成长双重承压，主结论偏谨慎加强</p></td>
+</tr>
+<tr>
+<td background-color="light-gray" vertical-align="middle"><p align="center">信号2 · 📌 北向资金</p></td>
+<td vertical-align="middle"><p align="left">连续 <b>3 个交易日</b>累计流向</p></td>
+<td vertical-align="middle"><p align="left">✅ 恢复净流入，外资 re-risking，冲击或已 price in</p></td>
+<td vertical-align="middle"><p align="left">❌ 累计净流出扩大，全球配置再平衡仍在进行</p></td>
+</tr>
+<tr>
+<td background-color="light-gray" vertical-align="middle"><p align="center">信号3 · 📌 成长相对红利</p></td>
+<td vertical-align="middle"><p align="left">相对强弱是否创新低</p></td>
+<td vertical-align="middle"><p align="left">✅ 相对强弱企稳，风格切换进入观察期</p></td>
+<td vertical-align="middle"><p align="left">❌ 持续创新低，re-pricing 未完成</p></td>
+</tr>
+</tbody>
+</table>
+<!-- SECTION:h1-06-signals END -->
+<!-- SECTION:h1-07-sources BEGIN -->
+<hr/>
+<h1 align="left"><span text-color="orange">七、信息来源</span></h1>
+<p align="left">[1] 美国联邦储备委员会｜2026-06-26｜<a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm">FOMC 声明与点阵图</a></p>
+<p align="left">[2] 华尔街见闻｜2026-06-27｜<a href="https://wallstreetcn.com/">美债收益率与联邦基金期货</a></p>
+<p align="left">[3] 证券时报｜2026-06-27｜<a href="https://www.stcn.com/">A 股收盘综述</a></p>
+<p align="left">[4] CME Group｜2026-06-28｜<a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html">FedWatch Tool</a></p>
+<p align="left">[5] 上海证券报｜2026-06-28｜<a href="https://www.cnstock.com/">海外利率预期与 A 股风格切换</a></p>
+<!-- SECTION:h1-07-sources END -->
+<!-- SECTION:risks-disclaimer BEGIN -->
+<hr/>
+<h1 align="left"><span text-color="orange">风险提示与免责声明</span></h1>
+<!-- 以下三段灰色免责声明正文须逐字来自 references/disclaimers.json standard_v2_full_risk_notice.body（去掉首行标题前缀后按 \n 拆段）；不得写入模块 9 风险 callout。范例为渲染示意。 -->
+<p align="left"><span text-color="gray">以上内容为AI自动生成或AI辅助生成，仅用于信息整理、投研辅助、教育交流或一般性分析参考，不构成对任何金融产品、交易策略或投资行为的推荐、邀约、承诺或保证，也不构成投资、法律、税务、会计等专业意见。</span></p>
+<p align="left"><span text-color="gray">以上内容可能基于公开信息、历史数据或用户提供材料进行总结、归纳、推演与情景分析，但相关内容可能存在时效性不足、信息缺漏、事实误差、模型偏差或生成性错误，历史数据、历史业绩、回测结果及情景假设均不代表未来表现。</span></p>
+<p align="left"><span text-color="gray">用户应基于自身风险承受能力、投资目标、财务状况及适用法律法规独立作出判断，必要时咨询持牌专业机构或顾问。任何因依赖以上内容而作出的决策及其后果，由用户自行承担。</span></p>
+<!-- SECTION:risks-disclaimer END -->
