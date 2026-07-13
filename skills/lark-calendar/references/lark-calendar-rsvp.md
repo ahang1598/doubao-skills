@@ -1,8 +1,7 @@
 # calendar +rsvp
 
-回复指定的日程，更新当前用户的 RSVP 状态（接受、拒绝或待定）。
 
-需要的scopes: ["calendar:calendar.event:reply"]
+回复指定的日程，更新当前用户的 RSVP 状态（接受、拒绝或待定）。
 
 ## 命令
 
@@ -36,4 +35,4 @@ lark-cli calendar +rsvp --calendar-id cal_xxx --event-id evt_xxx --rsvp-status a
 
 ## 参考
 
-- [lark-calendar](../SKILL.md) -- 日历全部命令
+- [lark-calendar](../SKILL.md) -- skill 入口与路由

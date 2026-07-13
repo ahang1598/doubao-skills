@@ -13,8 +13,8 @@ p, h1-h9, ul, ol, li, table, thead, tbody, tr, th, td, blockquote, pre, code, hr
 ## 容器标签
 |标签|说明|关键属性|
 |-|-|-|
-| `<callout>` | 高亮框，子块仅支持文本、标题、列表、待办、引用。**强提醒专用，使用前先看 `lark-doc-style.md` 的写作原则** | `emoji`(默认 bulb), `background-color`, `border-color`, `text-color` |
-| `<grid>` + `<column>` | 分栏布局，各列 width-ratio 之和为 1。**使用前先看 `lark-doc-style.md` 的写作原则** | `width-ratio` |
+| `<callout>` | 高亮框，子块仅支持文本、标题、列表、待办、引用 | `emoji`(默认 bulb), `background-color`, `border-color`, `text-color` |
+| `<grid>` + `<column>` | 分栏布局，各列 width-ratio 之和为 1 | `width-ratio` |
 | `<whiteboard>` | 嵌入画板 | `type`: `blank` \| `mermaid` \| `plantuml` \| `svg` |
 | `<pre>` | （代码块，内含 `code`）| `lang`, `caption` |
 | `<figure>` | 视图容器 | `view-type` |
@@ -97,14 +97,14 @@ p, h1-h9, ul, ol, li, table, thead, tbody, tr, th, td, blockquote, pre, code, hr
 
 # 六、美化系统
 - 颜色优先使用命名色，也可写 `rgb(r,g,b)` / `rgba(r,g,b,a)`。**基础色（7 色）**：red, orange, yellow, green, blue, purple, gray
-  | 属性 | 支持的命名色 |                                                                                                                                                                                                        
+  | 属性 | 支持的命名色 |
   |-|-|
   | 文字颜色 `<span text-color>` | 基础色 |
   | 高亮框字色 `<callout text-color>` | 基础色 |
-  | 高亮框边框 `<callout border-color>` | 基础色 |                                                                                                                                                                                 
-  | 文字背景 `<span background-color>` | 基础色 + `light-{色}` + `medium-gray` |                                                                                                                                                   
-  | 高亮框填充 `<callout background-color>` | `gray` + `light-{色}` + `medium-{色}` |                                                                                                                                              
-  | 单元格背景 `<th/td background-color>` | 同文字背景 |                                                                                                                                                                           
+  | 高亮框边框 `<callout border-color>` | 基础色 |
+  | 文字背景 `<span background-color>` | 基础色 + `light-{色}` + `medium-gray` |
+  | 高亮框填充 `<callout background-color>` | `gray` + `light-{色}` + `medium-{色}` |
+  | 单元格背景 `<th/td background-color>` | 同文字背景 |
   | 按钮背景 `<button background-color>` | 同文字背景 |
 - 常用 emoji： 💡(默认)✅❌📝❓❗👍❤️📌🏁⭐
 

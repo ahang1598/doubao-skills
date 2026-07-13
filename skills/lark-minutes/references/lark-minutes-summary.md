@@ -1,5 +1,6 @@
 # minutes +summary
 
+
 替换妙记的 AI 总结内容。写操作，会覆盖当前总结。
 
 本 skill 对应 shortcut：`lark-cli minutes +summary`（调用 `PUT /open-apis/minutes/v1/minutes/{minute_token}/summary`）。

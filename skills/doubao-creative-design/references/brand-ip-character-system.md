@@ -13,7 +13,7 @@ description: 用于用户当前请求或近 1 轮对话涉及品牌 IP 设计、
 
 ## 默认输出模式
 
-默认先在内部规划结构化任务条目，不只写 `prompt`。核心图任务标记为 `tool_mode: core_gen`，生成后记录 `core-ip` 的 CDN URL；所有衍生资产任务标记为 `tool_mode: derivative_edit`，并必须带 `image_reference_url_list: ["{core-ip CDN URL}"]`。这些字段用于内部规划和一致性检查；实际工具调用时按主 `SKILL.md` 映射为 `image_gen` 或 `image_edit` 的可用字段。
+默认先在内部规划结构化任务条目，不只写 `prompt`。可以在内部使用 `tool_mode`、`asset_id`、`visible_text`、`core-ip` 等字段做一致性检查；实际工具调用时必须按主 `SKILL.md` 映射为 `image_gen` 或 `image_edit`，并只传入宿主工具支持的 `prompt`、`ratio`、`image_reference_url_list` 等字段。内部字段不得写入最终 prompt。
 
 ## 必需输入
 
@@ -45,9 +45,9 @@ description: 用于用户当前请求或近 1 轮对话涉及品牌 IP 设计、
 
 入参：
 
-- `image`：file、URL 或 image object。
+- `image_reference_url_list`：按主 `SKILL.md` 传入用户上传图、历史生成图或 `core-ip` CDN URL；若宿主工具字段不同，按宿主工具映射。
 - `prompt`：仅描述修改目标、角色锚点提取、目标画面和保留要求。
-- 必要时传入工具支持的其他参数。
+- `ratio`：单独传入工具，不写入 prompt。
 
 出参：
 
@@ -70,8 +70,8 @@ description: 用于用户当前请求或近 1 轮对话涉及品牌 IP 设计、
 - 这一步可以不等用户确认，直接进入后续产物，但后续所有产物必须基于同一个 `core-ip` CDN URL。
 - 后续图片如果必须基于前一张实际生成结果继续生成，或用户明确要求中途确认，则串行执行。
 2. 批量 / 并发执行
-- 如果图生图工具支持一次传入多个 `prompt`，优先使用 batch edit：同一批多个 prompt 共享同一个 `image_reference_url_list: ["{core-ip CDN URL}"]`，每个 `prompt` 对应一张独立图片，不能把多个独立资产拼到同一张画布。
-- 同批任务的每个条目都必须有独立的 `tool_mode`、`image_reference_url_list`、`asset_id`、`title`、`prompt`、`visible_text` 和 `ratio`，并能按 `asset_id` 映射回对应结果。
+- 如果宿主图生图工具支持批量调用，同一批多个 prompt 共享同一个 `core-ip` 参考图集合，每个 prompt 对应一张独立图片，不能把多个独立资产拼到同一张画布。
+- 同批任务的每个内部规划条目都必须有独立标题、用途、prompt、可见文字清单和 ratio，并能映射回对应结果；实际工具字段按主 `SKILL.md` 统一转换。
 - 后续所有衍生资产必须使用 edit / 图生图，并传入同一个 `core-ip` CDN URL；禁止各资产独立调用纯 gen 生成。
 - `ip-main-view`、`ip-turnaround`、`ip-setting-card`、`ip-character-bible` 可以同批输出，前提是同批每个任务都基于同一个 `core-ip` CDN URL。
 - `ip-scene-poster`、`ip-concept-poster`、`ip-social-scene-cards`、`ip-theme-suite` 可以同批输出，前提是同批每个任务都基于同一个 `core-ip` CDN URL，且主题方向、场景范围和可见文字已锁定。
@@ -85,20 +85,20 @@ description: 用于用户当前请求或近 1 轮对话涉及品牌 IP 设计、
 
 ### 工具路由硬规则
 
-| 任务类型 | 必须使用 | 必填字段 |
+| 任务类型 | 必须使用 | 内部检查项 |
 |---|---|---|
-| 核心 IP 形象 | `tool_mode: core_gen` 或用户参考图 edit 后定为 `core-ip` | `asset_id: core-ip`、`prompt`、`ratio`、生成结果 CDN URL |
-| 所有衍生资产 | `tool_mode: derivative_edit` | `image_reference_url_list: ["{core-ip CDN URL}"]`、`asset_id`、`prompt`、`visible_text`、`ratio` |
+| 核心 IP 形象 | `image_gen`，或基于用户参考图的 `image_edit` 后定为 `core-ip` | 记录 `core-ip` CDN URL、prompt、ratio 和角色锚点 |
+| 所有衍生资产 | `image_edit` | `image_reference_url_list` 包含 `core-ip` CDN URL；每张有独立 prompt、ratio 和可见文字清单 |
 
 - 文生图只允许生成 `core-ip` 或核心候选；核心图确定后，后续资产必须走 edit / 图生图。
 - 如果 `core-ip` CDN URL 未成功返回，必须先补齐核心资产 URL；禁止改用 gen 继续生成衍生资产。
-- 如果发现三视图、设定卡、角色海报、概念海报、表情包、服装版本、主题套图、周边等衍生资产的 `tool_mode` 是 gen，必须改为 `derivative_edit` 后再执行。
+- 如果发现三视图、设定卡、角色海报、概念海报、表情包、服装版本、主题套图、周边等衍生资产计划使用 `image_gen`，必须改为 `image_edit` 后再执行。
 
 ### 核心 IP 锚点门禁规则
 
 - 任何 IP 方案必须先生成或确定 `core-ip` CDN URL，再生成其他衍生资产。
 - 用户已有核心参考图时，可直接作为 `core-ip` 参考 URL；如果用户意图是优化、风格化或改造成 IP，则先用 edit 处理参考图，并将结果 CDN URL 记录为 `core-ip`。
-- 用户没有核心图时，先用 gen 生成 `core-ip` 核心形象；无需等待用户确认也可以继续，但后续必须在 `image_reference_url_list` 中传入这个 `core-ip` CDN URL。
+- 用户没有核心图时，先用 gen 生成 `core-ip` 核心形象；无需等待用户确认也可以继续，但后续必须通过 `image_reference_url_list` 传入这个 `core-ip` CDN URL。
 - 后续所有资产，包括主视觉、三视图、设定卡、角色海报、概念海报、表情包、服装版本、主题套图、周边等，都必须基于同一个 `core-ip` CDN URL 调用 edit / 图生图。
 - 后续 prompt 必须写明：基于 `core-ip` 保持脸部结构、头身比、物种、眼睛、嘴鼻、主服装、主色、材质和核心道具，只变化姿势、表情、视角、场景、局部道具、排版和应用形式。
 - 绝对禁止 `ip-main-view`、`ip-turnaround`、`ip-setting-card`、海报、表情包等分别独立文生图；也禁止把多张独立生成图当作同一个 IP。
@@ -234,7 +234,7 @@ description: 用于用户当前请求或近 1 轮对话涉及品牌 IP 设计、
 
 ## 提示词写作规则
 
-每个资产条目都必须输出 `tool_mode`、`image_reference_url_list`、`asset_id`、`title`、`prompt`、`visible_text` 和推荐 `ratio`。核心图 `tool_mode` 为 `core_gen`，生成后记录 CDN URL；所有衍生资产 `tool_mode` 必须为 `derivative_edit`，且 `image_reference_url_list` 必须包含 `core-ip` CDN URL。`prompt` 条目就是高密度的 `design_brief` 本身，会直接发送给图像工具。模型、尺寸、种子、文件路径和脚本参数属于 manifest 或工具字段；不要把它们放进提示词正文。
+每个资产都必须在内部规划中记录标题、用途、prompt、可见文字清单、ratio、参考图依赖和结果 URL。核心图生成后记录为 `core-ip`；所有衍生资产必须基于 `core-ip` 调用 `image_edit`。实际传给图像工具的 prompt 只保留高密度 `design_brief`，不要写 `tool_mode`、`asset_id`、`visible_text`、`image_reference_url_list`、模型、尺寸、种子、文件路径、图片 URL 或脚本参数。
 
 如果使用多张参考图，用 `[img0]`、`[img1]`、`[img2]` 引用。每张图都必须独立描述：它提供了哪个角色/形态/风格、必须保留什么、当前交付物会如何使用它。不要把多图参考概括成“相同风格”或“所有参考”。
 
@@ -266,11 +266,11 @@ description: 用于用户当前请求或近 1 轮对话涉及品牌 IP 设计、
 
 ### 文字渲染硬约束
 
-所有要渲染的文字必须详细明确，并同时出现在 `visible_text` 与 `prompt` 正文中。每一处文字都必须使用中文双引号包裹，例如：“星球探索计划”、“IP settings”、“Scene poster”、“2025 Design by saaam”。
+所有要渲染的文字必须先进入内部可见文字清单，并在 prompt 正文中逐字写出。每一处文字都必须使用中文双引号包裹，例如：“星球探索计划”、“IP settings”、“Scene poster”、“2025 Design by saaam”。
 
 每条文字描述必须包含：完整文字内容、语言、所在位置、层级用途、字体风格、颜色、对齐方式和视觉处理。不要写“品牌标题”“英文小字”“Logo 文案”“说明文字”“手写标注”“一些标签”这类模糊文字指令。
 
-`visible_text` 使用逐条清单，格式建议为：`位置 / 用途 / 完整文字 / 字体与颜色`。如果不希望画面出现文字，`visible_text` 写 `画面不出现任何文字`，并在 prompt 正文重复这一句。
+内部可见文字清单使用逐条结构：`位置 / 用途 / 完整文字 / 字体与颜色`。如果不希望画面出现文字，在 prompt 正文写明“画面不出现任何文字”。
 
 禁止生成未声明文字、乱码、伪字、随机英文、随机日期、随机署名、占位符、错别字和模型自行补充的装饰性文字。若需要 Logo，只能渲染用户指定的完整 Logo 文字或明确写出的符号说明。
 
@@ -281,17 +281,17 @@ description: 用于用户当前请求或近 1 轮对话涉及品牌 IP 设计、
 1. **总览**：第一句话说明图像类型、载体/版式，以及 IP 渲染情绪。可选第二句话说明背景/材质和角色概念。
 2. **分区扫描**：按从上到下、由中心向外，或正面/侧面/背面的顺序描述。每个可见元素都需要说明绝对位置、元素类型、形态细节、中文双引号内的文字内容、文字风格、状态、对齐方式、颜色/材质和视觉处理。
 3. **条件收束**：对于简单角色设定页，补充 1-2 句全局配色、材质和性格说明。
-4. **画幅比例**：按“比例和尺寸决策”选择比例，并以 `画幅：{ratio}` 结尾。
+4. **比例决策**：按“比例和尺寸决策”选择 ratio，并单独传入工具；不要把 `画幅：{ratio}` 写进 prompt。
 
 ### 图生图prompt
 
 对于所有基于 `core-ip` CDN URL 的 IP 衍生图，按以下顺序撰写提示词：
 
-1. **生成目标**：第一句必须说明 `使用 image_reference_url_list 中的 core-ip CDN URL 作为唯一角色参考`，再说明要生成的新 IP 交付物。例如：`使用 image_reference_url_list 中的 core-ip CDN URL 作为唯一角色参考，提取【角色体型、脸部结构、主色、标志道具】四类角色要素，生成【三视图设定页】。`
+1. **生成目标**：第一句必须说明基于 `core-ip` 角色参考生成新的 IP 交付物，但不要把 CDN URL 或 `image_reference_url_list` 字段写入 prompt。例如：`基于已确认的核心 IP 角色参考，提取“角色体型、脸部结构、主色、标志道具”四类角色要素，生成“三视图设定页”。`
 2. **角色要素提取**：只列出可复用的角色锚点：物种/身体、头身比、脸/眼/嘴、服装逻辑、标志性道具、材质质感、配色和身份识别点。不要描述源图背景、裁切、海报文字、镜头光照或偶发道具，除非它们定义了角色。
 3. **目标画面展开**：按物理顺序描述新的主视觉、设定圣经页、三视图、动作延展、场景海报、表情包、周边或 IP-Logo 关系。提示词的大部分内容应定义目标姿势、视角、表情、动作、场景、设定页版式和可见标签。
 4. **一致性与质量约束**：只保持角色锚点一致，同时允许新的姿势、表情、镜头角度、背景、动作和应用形式。明确渲染风格、材质、轮廓清晰度、表情质量和跨图像可识别性。
-5. **画幅比例**：按“比例和尺寸决策”选择比例；如需保持参考图比例，写明 `画幅：沿用参考图比例`，否则以 `画幅：{ratio}` 结尾。
+5. **比例决策**：按“比例和尺寸决策”选择 ratio；如需保持参考图比例，在工具字段中沿用参考图比例，不要把 `画幅：沿用参考图比例` 或 `画幅：{ratio}` 写进 prompt。
 
 ### 提示词条目
 
@@ -302,8 +302,8 @@ description: 用于用户当前请求或近 1 轮对话涉及品牌 IP 设计、
 - 先说明要生成什么，再说明从参考图中提取哪些角色元素。避免过度保留源图版式、背景、裁切、光照、装饰性文字或无关场景细节。
 - 列出所有预期渲染出来的文字，并使用中文双引号，例如 `“角色名”`。文字必须是完整内容，不能写成文字类别或占位符。如果不应出现文字，写 `画面不出现任何文字`。
 - 将所有负面约束集中放在最后一行 `禁止：...`。
-- 省略像素尺寸、模型名称、种子、CLI 参数、输出文件名、图片 URL 和源路径。提示词最后一行只保留 `画幅：{ratio}` 或 `画幅：沿用参考图比例`。
-- 衍生资产条目必须显式写 `tool_mode: derivative_edit` 和 `image_reference_url_list: ["{core-ip CDN URL}"]`；核心图条目才允许 `tool_mode: core_gen`。
+- 省略像素尺寸、模型名称、种子、CLI 参数、输出文件名、图片 URL、源路径、ratio 字段和内部规划字段。
+- 衍生资产内部规划必须标记为基于 `core-ip` 的 `image_edit`；最终 prompt 不写 `tool_mode` 或 `image_reference_url_list`。
 
 ### 常用提示词骨架
 
@@ -357,7 +357,7 @@ description: 用于用户当前请求或近 1 轮对话涉及品牌 IP 设计、
 
 最终确认前，检查：没有受保护 IP、公众人物或艺术家名称，除非用户提供；没有敏感政治/宗教/性/暴力内容；没有不适当的身体暴露；没有 `xx` 或 `某某` 之类占位符；所有渲染文字都已完整写出并加中文双引号；没有“标题文字”“英文小字”等模糊文字；图生图简报完整保留了必需的角色锚点。
 
-工具调用前检查：核心图是否已存在为 `core-ip` CDN URL；所有衍生资产是否都是 `tool_mode: derivative_edit`；所有衍生资产是否都带 `image_reference_url_list: ["{core-ip CDN URL}"]`；是否存在衍生资产仍为 gen，如果有则禁止执行。
+工具调用前检查：核心图是否已存在为 `core-ip` CDN URL；所有衍生资产是否都使用 `image_edit`；所有衍生资产的 `image_reference_url_list` 是否包含 `core-ip` CDN URL；是否存在衍生资产仍计划使用 `image_gen`，如果有则禁止执行。
 
 ## QA
 
@@ -365,7 +365,7 @@ description: 用于用户当前请求或近 1 轮对话涉及品牌 IP 设计、
 - 每个提示词都有面向该交付物的专属场景/动作/视角指令。
 - 主视觉、设定圣经页、三视图、动作、场景、表情包和周边共享同一身份。
 - 图内文字要短，但必须逐字明确；较长的设定说明应放在指南中。
-- `visible_text` 与 `prompt` 中声明的文字一致，且每个文字内容都用中文双引号包裹。
+- 内部可见文字清单与 prompt 中声明的文字一致，且每个文字内容都用中文双引号包裹。
 - 不存在未声明文字、乱码、伪字、随机英文、随机日期或随机署名。
 - 场景海报可以丰富，但不能淹没角色。
 - 角色海报和概念海报必须有明确文字排版策略，所有海报文字都逐字写出并用中文双引号包裹。
