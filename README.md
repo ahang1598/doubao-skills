@@ -7,15 +7,17 @@
 - 源目录：`C:\Users\15805\AppData\Local\Doubao\User Data\Default\.doubao\agent_mode\workspace\.skills`
 - 同步目录：`skills/`
 - 任务计划：`DoubaoSkillsDailySync`，每天 18:00 运行
-- 当前 skill 数：37
-- 当前文件数：513
-- 最近变更：[2026-07-13-180002](change-logs/2026-07-13-180002.md) - 本次同步新增 57 个文件、修改 60 个文件、删除 5 个文件。 受影响范围：doubao-creative-design, doubao-creative-drama, doubao-cron-scheduler, doubao-qa, lark-approval, lark-base, lark-calendar, lark-doc, lark-...
+- 当前 skill 数：41
+- 当前文件数：602
+- 最近变更：[2026-07-15-172708](change-logs/2026-07-15-172708.md) - 本次同步新增 96 个文件、修改 2 个文件、删除 7 个文件。 新增 skill：doubao-academic-evaluator, doubao-academic-polish, doubao-identity, doubao-newmedia-writing, xiaohe-medical-report。 移除的 skill 已归档：douba...
 
 ## Skill 索引
 
 | Skill | Files | Description |
 | --- | ---: | --- |
 | `browser-task` (`skills/browser-task`) | 15 | 浏览器自动化任务处理技能。仅在以下情况使用：1) 其他 skill/工具（搜索、API、数据接口等）都无法满足需求，需要通过真实浏览器 GUI 兜底执行；2) 任务必须在具体网站完成登录 / 授权 / 账号内动作（点赞 / 收藏 / 评论 / 发布 / 加购）；3) 命中白名单网站（淘宝/天猫、微博、小红书）的站内检索 / 互动 / 发布需求。当用户仅需要信息检索、文本生成、代码或数据处理时，不要使用本 skill。 |
+| `doubao-academic-evaluator` (`skills/doubao-academic-evaluator`) | 8 | 用资深审稿人和导师的眼光，对科研工作做"只看不改"的诊断。两类任务：一是评判研究想法值不值得做（打分、查新颖性、判可行性）；二是论文评审，给文章成稿挑硬伤、判断能不能投。只负责找问题、下结论、给修改方向，不替你写正文、不替你画图。要动手写作、搭结构、润色语言，请用姊妹技能 doubao-academic-polish。触发于"帮我看看这个想法""值不值得做""投稿前帮我审一遍""能不能投"。 |
+| `doubao-academic-polish` (`skills/doubao-academic-polish`) | 42 | 论文产出侧的总入口与调度技能，把研究者需求分流到四条工作线并统一以飞书云文档交付：语言润色（改语法/去AI腔/中译英投稿级）、结构梳理（理主线/搭大纲/诊断逻辑断点）、英文论文撰写（从想法写出可投稿正文）、中文论文撰写。覆盖写整篇或章节段落、润色已有文字、去AI味、理逻辑搭大纲等需求。只管产出侧；判断想法值不值得做、投稿前评审稿件走姊妹技能 doubao-academic-evaluator。 |
 | `doubao-app-builder` (`skills/doubao-app-builder`) | 1 | 统一处理网页应用的生成、编辑，以及围绕已生成产物的问答。既负责把自然语言需求端到端转成可运行、可预览、可交付的网页应用产物，也负责在用户追问产物时基于真实产物作答。当用户要生成网站、H5、网页应用、管理后台、数据看板时使用。当用户要编辑已有网页应用、做功能新增、页面调整或 Bug 修复时使用。当用户提供 PRD、文档、截图或素材包并要求产出可预览网页应用时使用。当用户针对已生成的网页应用，要求总结或解读网页内容、查看或分析源码、解... |
 | `doubao-creative-design` (`skills/doubao-creative-design`) | 8 | 当用户要求生成、编辑、改图、修图、重绘、文生图、图生图、扩图、换背景、换风格、局部替换、参考图衍生、系列延展或多比例适配商业创意图片时使用；触发任务包括做图、出图、生成图片、设计海报、主视觉/KV、Banner、封面、社媒配图、社媒长图、电商主图、详情页、产品图、Logo、IP角色、吉祥物、包装、品牌应用物料、活动物料、宣传册、落地页、知识科普海报、教学图、教材插图、课件配图、思维导图、知识图谱、流程图、数据图表、科学结构图、公式... |
 | `doubao-creative-drama` (`skills/doubao-creative-drama`) | 6 | 当用户提出短篇短剧、动画短片、微电影、剧情视频、AI视频、影视化短片、动态漫、宣传片、预告片等**单集 5-10 分钟以内**的短篇制作需求，或包含"做个短剧"、"拍个微电影"、"弄个动画短片"、"写个短剧剧本"、"画个分镜"、"搞个人设/场景资产"、"出个关键帧"、"写图生视频提示词/Seedance提示词"等表达时调用。适用于需要按"规划-剧本-分镜-资产-关键帧-视频生成"推进完整视频生产流程的短篇场景。**不承接几十集连续... |
@@ -24,8 +26,9 @@
 | `doubao-daily-stock` (`skills/doubao-daily-stock`) | 9 | 用于单一上市股票或二级市场公司的当日/近期个股日报，解释涨跌和异动原因，梳理行情、资金流、新闻公告、板块联动、技术面、预期与风险。适用于“某股今天为什么涨跌”“做个日报”“近期表现”“资金面和消息面”等问题；默认先输出结构完整、观点深入的对话版分析，并询问是否写入飞书文档；不用于长期商业模式/护城河、财报业绩、行业/板块、多股主题、一级市场或大盘事件解读。 |
 | `doubao-earnings-analysis` (`skills/doubao-earnings-analysis`) | 23 | 上市公司财报/季报/年报/业绩的深度因果分析，覆盖A股、港股、美股和中概股。用于解读财报表现、亮点/风险、收入利润等指标变动、超预期或低于预期原因，以及针对毛利率、现金流、费用率等具体变量的归因问题。不用于纯股价、估值、评级、目标价、非财报新闻或未锚定具体公司报告期的宏观行业讨论。 |
 | `doubao-finance-sector` (`skills/doubao-finance-sector`) | 36 | 对【板块/概念/主题/题材】的短期市场热度做专业、可证伪的深度分析，并在用户要求『生成飞书文档』时通过 lark-doc 写入结构化飞书文档。触发场景：当用户问某板块/概念/题材现在热不热、能不能追、为什么走强或降温、持续性如何、成交主要活跃在哪些方向、内部谁强谁弱，或要求生成对应飞书文档时触发。不适用场景：行业长期趋势、单股行情、公司基本面/财报、大盘/宏观等话题，不触发本skill。 |
+| `doubao-identity` (`skills/doubao-identity`) | 6 | 用于回答与豆包产品本身相关的问答，覆盖豆包会员/专业版、隐私安全、记忆功能的知识问答场景，不用于通用创作、翻译、代码、竞品对比或查询用户个人账户/订单/额度数据。 |
 | `doubao-market-hotspot` (`skills/doubao-market-hotspot`) | 13 | 面向普通股民的市场整体与宏观事件解读。用户关注全市场涨跌、交易主线、市场热点、宏观/政策/新闻/风险事件、央行利率、通胀就业、跨资产联动、资金风险偏好或市场情绪时使用。命中后先输出结构完整、观点深入的对话框分析，用户确认后通过 lark-doc 写入飞书 XML 文档。不要用于单股、具体板块/行业/公司/财报分析，或荐股、目标价、买卖点、仓位建议；不确定时先澄清。飞书交付需已安装 lark-doc 伴生 Skill。 |
-| `doubao-qa` (`skills/doubao-qa`) | 7 | 当用户询问豆包会员/专业版、隐私安全、记忆功能、数据处理或其他豆包产品本身相关问题时使用。 |
+| `doubao-newmedia-writing` (`skills/doubao-newmedia-writing`) | 23 | 用于生成、改写、优化并默认以飞书文档/Lark Doc 交付中文新媒体内容，覆盖小红书图文笔记、微信公众号文章、3 分钟以内短视频分镜脚本，以及上述类型的复合创作方案；明确命中创作类型后必须创建并交付飞书文档/Lark Doc。 |
 | `doubao-sentiment-tracker` (`skills/doubao-sentiment-tracker`) | 6 | 当用户在网页端或电脑客户端需要进行舆情监控、调研、社交媒体反馈收集、用户评价、品牌声量追踪时使用。支持微博、知乎、即刻、脉脉、B站、抖音.等多平台的舆情搜索、内容筛选和原始帖子溯源。注意：判断用户所处平台是手机端时，禁止触发这个skill。 |
 | `doubao-visualization` (`skills/doubao-visualization`) | 5 | 当用户的需求依赖可视化展示、画图、图解、趋势图、关系图、交互/动态演示、动画讲解，或数据趋势占比排名、多指标对比、算法状态机、参数变化教学、结构化知识、几何构造证明需要图示时使用；地图、附件生成、纯文字足够场景不使用。 |
 | `lark-approval` (`skills/lark-approval`) | 17 | 飞书审批：查询和处理审批待办/已办/实例，搜索可发起审批定义、查看定义详情并发起原生审批实例。当用户要处理审批任务、查看审批实例、搜索或发起审批时使用。审批待办不是飞书任务；非审批类待办走 lark-task。不负责创建审批定义；三方审批定义不走原生提单。 |
@@ -52,10 +55,12 @@
 | `lark-workflow-meeting-summary` (`skills/lark-workflow-meeting-summary`) | 1 | 会议纪要整理工作流：汇总指定时间范围内的会议纪要并生成结构化报告。当用户需要整理会议纪要、生成会议周报、回顾一段时间内的会议内容时使用。 |
 | `lark-workflow-standup-report` (`skills/lark-workflow-standup-report`) | 1 | 日程待办摘要：编排 calendar +agenda 和 task +get-my-tasks，生成指定日期的日程与未完成任务摘要。适用于了解今天/明天/本周的安排。 |
 | `skill-creator-for-task` (`skills/skill-creator-for-task`) | 6 | 创建有效 Skill 的指南。当用户想要创建新的 Skill，或更新现有 Skill，以便通过专门知识、工作流程或工具集成来扩展 AI Agent 能力时，应使用此 Skill。 |
+| `xiaohe-medical-report` (`skills/xiaohe-medical-report`) | 17 | 必须在用户需要医学报告解读时使用。包括：用户上传体检报告、检验报告、检查单、化验单、血常规/尿常规/生化/肝肾功能/血脂血糖等检验检查图片、照片、截图、PDF、文档、表格或文件；用户只发报告图片/附件且没有文字说明；用户说“帮我看看”“看下这个报告”“这个结果正常吗”“有什么问题”“报告怎么解读”；用户表达体检报告解读、医院报告解读、影像/超声/CT/MRI/内镜/病理报告解读等需求。用于梳理报告内容，解释异常指标和检查发现，识别... |
 
 ## 最近变更
 
 | Date | Change Log | Summary |
 | --- | --- | --- |
+| 2026-07-15-172708 | [2026-07-15-172708](change-logs/2026-07-15-172708.md) | 本次同步新增 96 个文件、修改 2 个文件、删除 7 个文件。 新增 skill：doubao-academic-evaluator, doubao-academic-polish, doubao-identity, doubao-newmedia-writing, xiaohe-medical-report。 移除的 skill 已归档：douba... |
 | 2026-07-13-180002 | [2026-07-13-180002](change-logs/2026-07-13-180002.md) | 本次同步新增 57 个文件、修改 60 个文件、删除 5 个文件。 受影响范围：doubao-creative-design, doubao-creative-drama, doubao-cron-scheduler, doubao-qa, lark-approval, lark-base, lark-calendar, lark-doc, lark-... |
 | 2026-07-07-161744 | [2026-07-07-161744](change-logs/2026-07-07-161744.md) | 本次同步新增 461 个文件、修改 0 个文件、删除 0 个文件。 新增 skill：browser-task, doubao-app-builder, doubao-creative-design, doubao-creative-drama, doubao-creative-video, doubao-cron-scheduler, doubao-... |
