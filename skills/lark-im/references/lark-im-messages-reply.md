@@ -180,7 +180,7 @@ lark-cli im +messages-reply --message-id om_xxx --msg-type interactive --content
 | `--video-cover <path\|url\|key>` | **Required with `--video`** | Cwd-relative local cover image path, URL, or `image_key` (`img_xxx`)                                                                                                                          |
 | `--audio <path\|url\|key>` | One content option | Voice-message audio key, URL, or cwd-relative local path. Local paths and URLs must be Opus (`.opus` or Ogg Opus `.ogg`) |
 | `--reply-in-thread` | No | Reply inside the thread. The reply appears in the target message's thread instead of the main chat stream                                                                                     |
-| `--idempotency-key <key>` | No | Idempotency key; the same key sends only one reply within 1 hour                                                                                                                              |
+| `--idempotency-key <key>` | No | Idempotency key, max 50 characters; the same key sends only one reply within 1 hour                                                                                                          |
 | `--dry-run` | No | Print the request only, do not execute it                                                                                                                                                     |
 
 > **Mutual exclusivity rule:** `--text`, `--markdown`, `--content`, and `--image`/`--file`/`--video`/`--audio` cannot be used together. Media flags are also mutually exclusive with each other.

@@ -158,7 +158,7 @@
 如果用户提供了 .docx 文件，用 replace 模式直接修改并保留格式：
 
 ```bash
-uv run ../scripts/docx_edit.py replace 原文件.docx 修改后.docx replacements.json
+uv run skills/lark-doc/office-word/scripts/docx_edit.py replace 原文件.docx 修改后.docx replacements.json
 ```
 
-设置 `"track_changes": true` 可用修订标记标注改动。运行 `uv run ../scripts/docx_edit.py --help` 查看详细用法。
+设置 `"track_changes": true` 可用修订标记标注改动。运行 `uv run skills/lark-doc/office-word/scripts/docx_edit.py --help` 查看详细用法。

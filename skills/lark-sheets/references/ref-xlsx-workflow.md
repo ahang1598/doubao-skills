@@ -289,7 +289,7 @@ def safe_set_formula(ws, cell, formula):
     ws[cell] = formula
 ```
 
-**双重校验闭环**：写入用 `safe_set_formula`（事前） → 保存后跑 `formula_verify.py`（事后）。两道关卡基本能消灭所有公式错误。
+**双重校验闭环**：写入时套用上文 `safe_set_formula` 函数（需自行纳入脚本，事前） → 保存后跑独立脚本 `formula_verify.py`（事后）。两道关卡基本能消灭所有公式错误。
 
 ## 公式重算（必做步骤）
 

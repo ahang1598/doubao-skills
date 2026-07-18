@@ -140,26 +140,26 @@
 ### 内容提取（读取用户的文件）
 
 ```bash
-uv run ../scripts/extract_text.py 技术交底书.docx
-uv run ../scripts/extract_text.py 审查意见.pdf -o content.txt
+uv run skills/lark-doc/office-word/scripts/extract_text.py 技术交底书.docx
+uv run skills/lark-doc/office-word/scripts/extract_text.py 审查意见.pdf -o content.txt
 ```
 
 ### Word 文件编辑（解包 → 修改 → 打包）
 
 ```bash
 # 一步完成：在 .docx 中替换文本，保留原文件格式
-uv run ../scripts/docx_edit.py replace 原文件.docx 输出.docx replacements.json
+uv run skills/lark-doc/office-word/scripts/docx_edit.py replace 原文件.docx 输出.docx replacements.json
 
 # 分步操作（需要手动编辑 XML 时）
-uv run ../scripts/docx_edit.py unpack 原文件.docx unpacked/
+uv run skills/lark-doc/office-word/scripts/docx_edit.py unpack 原文件.docx unpacked/
 # 编辑 unpacked/word/document.xml 中的文本
-uv run ../scripts/docx_edit.py pack unpacked/ 输出.docx
+uv run skills/lark-doc/office-word/scripts/docx_edit.py pack unpacked/ 输出.docx
 ```
 
 ### 从零生成专利文件（无模板时）
 
 ```bash
-uv run ../scripts/create_docx.py content.json output.docx
+uv run skills/lark-doc/office-word/scripts/create_docx.py content.json output.docx
 ```
 
 ## 脚本索引

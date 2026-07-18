@@ -11,7 +11,7 @@
 | 任务 | 做法 |
 |------|------|
 | 填写用户提供的 .docx 模板 | 解包 → 编辑 XML → 回包（见下方工作流） |
-| 快速查看 .docx 内容 | `uv run scripts/extract_docx.py template.docx` |
+| 快速查看 .docx 内容 | `uv run skills/lark-doc/office-word/visa-doc-filler/scripts/extract_docx.py template.docx` |
 | 从零创建签证文档 | 用 `docx-js`（见 `../references/docx-creation-guide.md`） |
 | 读取 PDF 文件 | 直接使用 Read 工具读取（原生支持 PDF 转文本） |
 | 读取图片（护照、证件） | 直接使用 Read 工具查看（支持 jpg/png/gif/webp） |
@@ -36,7 +36,7 @@
 ### 第一步：读取用户资料
 
 用户可能同时提供个人资料文件（简历、护照扫描件等），格式可能是：
-- **Word (.docx)** — `uv run scripts/extract_docx.py resume.docx` 或直接 Read 工具读取
+- **Word (.docx)** — `uv run skills/lark-doc/office-word/visa-doc-filler/scripts/extract_docx.py resume.docx` 或直接 Read 工具读取
 - **PDF** — 直接使用 Read 工具读取（自动转文本）
 - **图片** — 使用 Read 工具查看（支持 jpg/png/gif/webp）
 - **纯文本** — 直接读取
@@ -48,7 +48,7 @@
 先用提取脚本快速掌握文档全貌：
 
 ```bash
-uv run scripts/extract_docx.py template.docx
+uv run skills/lark-doc/office-word/visa-doc-filler/scripts/extract_docx.py template.docx
 ```
 
 输出带表格结构标注的文本，如：
@@ -66,7 +66,7 @@ uv run scripts/extract_docx.py template.docx
 ### 第三步：解包模板文档
 
 ```bash
-uv run scripts/docx_edit.py unpack template.docx unpacked/
+uv run skills/lark-doc/office-word/visa-doc-filler/scripts/docx_edit.py unpack template.docx unpacked/
 ```
 
 解压 ZIP 到 `unpacked/` 目录，格式化 XML 使其可读，并合并相邻的相同格式文本节点。
@@ -105,7 +105,7 @@ uv run scripts/docx_edit.py unpack template.docx unpacked/
 ### 第六步：回包输出
 
 ```bash
-uv run scripts/docx_edit.py pack unpacked/ filled.docx
+uv run skills/lark-doc/office-word/visa-doc-filler/scripts/docx_edit.py pack unpacked/ filled.docx
 ```
 
 回包时会自动修复空格问题（`xml:space="preserve"`），压缩 XML，生成最终 .docx 文件。

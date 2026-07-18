@@ -250,11 +250,11 @@
 如果用户提供了原始的 .docx 格式申请文件，直接用 replace 模式修改，开启修订标记：
 
 ```bash
-uv run ../scripts/docx_edit.py replace 原权利要求书.docx 修改后.docx replacements.json
+uv run skills/lark-doc/office-word/scripts/docx_edit.py replace 原权利要求书.docx 修改后.docx replacements.json
 ```
 
 `replacements.json` 中设置 `"track_changes": true`，审查员就能看到改了什么。
 
-意见陈述书通常是新文件，用 `uv run ../scripts/create_docx.py content.json output.docx` 生成。
+意见陈述书通常是新文件，用 `uv run skills/lark-doc/office-word/scripts/create_docx.py content.json output.docx` 生成。
 
-设置 `"track_changes": true` 可用修订标记标注改动。运行 `uv run ../scripts/docx_edit.py --help` 查看详细用法。
+设置 `"track_changes": true` 可用修订标记标注改动。运行 `uv run skills/lark-doc/office-word/scripts/docx_edit.py --help` 查看详细用法。

@@ -7,9 +7,9 @@
 - 源目录：`C:\Users\15805\AppData\Local\Doubao\User Data\Default\.doubao\agent_mode\workspace\.skills`
 - 同步目录：`skills/`
 - 任务计划：`DoubaoSkillsDailySync`，每天 18:00 运行
-- 当前 skill 数：41
-- 当前文件数：602
-- 最近变更：[2026-07-15-172708](change-logs/2026-07-15-172708.md) - 本次同步新增 96 个文件、修改 2 个文件、删除 7 个文件。 新增 skill：doubao-academic-evaluator, doubao-academic-polish, doubao-identity, doubao-newmedia-writing, xiaohe-medical-report。 移除的 skill 已归档：douba...
+- 当前 skill 数：42
+- 当前文件数：609
+- 最近变更：[2026-07-18-180002](change-logs/2026-07-18-180002.md) - 本次同步新增 25 个文件、修改 57 个文件、删除 18 个文件。 新增 skill：doubao-medical-report, doubao-record。 移除的 skill 已归档：xiaohe-medical-report。 受影响范围：doubao-medical-report, doubao-record, lark-doc, lark...
 
 ## Skill 索引
 
@@ -28,7 +28,9 @@
 | `doubao-finance-sector` (`skills/doubao-finance-sector`) | 36 | 对【板块/概念/主题/题材】的短期市场热度做专业、可证伪的深度分析，并在用户要求『生成飞书文档』时通过 lark-doc 写入结构化飞书文档。触发场景：当用户问某板块/概念/题材现在热不热、能不能追、为什么走强或降温、持续性如何、成交主要活跃在哪些方向、内部谁强谁弱，或要求生成对应飞书文档时触发。不适用场景：行业长期趋势、单股行情、公司基本面/财报、大盘/宏观等话题，不触发本skill。 |
 | `doubao-identity` (`skills/doubao-identity`) | 6 | 用于回答与豆包产品本身相关的问答，覆盖豆包会员/专业版、隐私安全、记忆功能的知识问答场景，不用于通用创作、翻译、代码、竞品对比或查询用户个人账户/订单/额度数据。 |
 | `doubao-market-hotspot` (`skills/doubao-market-hotspot`) | 13 | 面向普通股民的市场整体与宏观事件解读。用户关注全市场涨跌、交易主线、市场热点、宏观/政策/新闻/风险事件、央行利率、通胀就业、跨资产联动、资金风险偏好或市场情绪时使用。命中后先输出结构完整、观点深入的对话框分析，用户确认后通过 lark-doc 写入飞书 XML 文档。不要用于单股、具体板块/行业/公司/财报分析，或荐股、目标价、买卖点、仓位建议；不确定时先澄清。飞书交付需已安装 lark-doc 伴生 Skill。 |
+| `doubao-medical-report` (`skills/doubao-medical-report`) | 17 | 必须在用户需要医学报告解读时使用。包括：用户上传体检报告、检验报告、检查单、化验单、血常规/尿常规/生化/肝肾功能/血脂血糖等检验检查图片、照片、截图、PDF、文档、表格或文件；用户只发报告图片/附件且没有文字说明；用户说“帮我看看”“看下这个报告”“这个结果正常吗”“有什么问题”“报告怎么解读”；用户表达体检报告解读、医院报告解读、影像/超声/CT/MRI/内镜/病理报告解读等需求。用于梳理报告内容，解释异常指标和检查发现，识别... |
 | `doubao-newmedia-writing` (`skills/doubao-newmedia-writing`) | 23 | 用于生成、改写、优化并默认以飞书文档/Lark Doc 交付中文新媒体内容，覆盖小红书图文笔记、微信公众号文章、3 分钟以内短视频分镜脚本，以及上述类型的复合创作方案；明确命中创作类型后必须创建并交付飞书文档/Lark Doc。 |
+| `doubao-record` (`skills/doubao-record`) | 1 | 启动当前飞书会话的录音。当用户需要发起录音，或对录音进行中的内容询问的时候，可以使用此技能。 |
 | `doubao-sentiment-tracker` (`skills/doubao-sentiment-tracker`) | 6 | 当用户在网页端或电脑客户端需要进行舆情监控、调研、社交媒体反馈收集、用户评价、品牌声量追踪时使用。支持微博、知乎、即刻、脉脉、B站、抖音.等多平台的舆情搜索、内容筛选和原始帖子溯源。注意：判断用户所处平台是手机端时，禁止触发这个skill。 |
 | `doubao-visualization` (`skills/doubao-visualization`) | 5 | 当用户的需求依赖可视化展示、画图、图解、趋势图、关系图、交互/动态演示、动画讲解，或数据趋势占比排名、多指标对比、算法状态机、参数变化教学、结构化知识、几何构造证明需要图示时使用；地图、附件生成、纯文字足够场景不使用。 |
 | `lark-approval` (`skills/lark-approval`) | 17 | 飞书审批：查询和处理审批待办/已办/实例，搜索可发起审批定义、查看定义详情并发起原生审批实例。当用户要处理审批任务、查看审批实例、搜索或发起审批时使用。审批待办不是飞书任务；非审批类待办走 lark-task。不负责创建审批定义；三方审批定义不走原生提单。 |
@@ -36,10 +38,10 @@
 | `lark-base` (`skills/lark-base`) | 26 | 飞书多维表格（Base）操作：建表、字段、记录、视图、统计、公式/lookup、表单、仪表盘、workflow、角色权限；遇到 Base/多维表格/bitable 或 /base/ 链接时使用。文件导入转 lark-drive。 |
 | `lark-calendar` (`skills/lark-calendar`) | 11 | 飞书日历：管理日历日程和会议室。查看/搜索日程、创建/更新日程、管理参会人、查询忙闲和推荐时段、预定会议室。当用户需要查看日程安排、创建/修改会议、查询/预定会议室时使用。不负责：查询过去的视频会议记录（走 lark-vc）、待办任务（走 lark-task）。 |
 | `lark-contact` (`skills/lark-contact`) | 3 | 飞书 / Lark 通讯录:按姓名 / 邮箱解析成 open_id,或按 open_id 反查姓名 / 部门 / 邮箱 / 联系方式 / 个人状态 / 签名。当用户提到某人姓名要下一步发消息 / 排日程,或拿到 open_id 想查具体信息时使用。不负责部门树遍历、按部门列员工、组织架构图,这类需求走原生 OpenAPI。 |
-| `lark-doc` (`skills/lark-doc`) | 45 | Lark Doc 文档统一入口：处理在线 Docx/Wiki 与本地 Word/PDF 文档任务。在线文档 URL/token、读取、创建、编辑、总结等任务路由到 online-doc；本地 .docx/.doc/.pdf 文件、明确要求 Word/PDF 交付或格式保留处理的任务路由到 office-word。不处理 Sheet、Slide、Excel、PowerPoint、Base 表内操作。 |
-| `lark-drive` (`skills/lark-drive`) | 41 | 飞书云空间（云盘/云存储）：管理 Drive 文件和文件夹，包含上传/下载、创建文件夹、复制/移动/删除、查看元数据、评论/权限/订阅、标题、版本和本地文件导入。用户需要整理云盘目录、处理云空间资源 URL/token，或导入 Word/Markdown/Excel/CSV/PPTX/.base 为 docx/sheet/bitable/slides 时使用；doubao.com 云空间 URL/token 也按资源路径和 tok... |
+| `lark-doc` (`skills/lark-doc`) | 46 | Lark Doc 文档统一入口：处理在线 Docx/Wiki 与本地 Word/PDF 文档任务。在线文档 URL/token、读取、创建、编辑、总结等任务路由到 online-doc；本地 .docx/.doc/.pdf 文件、明确要求 Word/PDF 交付或格式保留处理的任务路由到 office-word。不处理 Sheet、Slide、Excel、PowerPoint、Base 表内操作。 |
+| `lark-drive` (`skills/lark-drive`) | 42 | 飞书云空间（云盘/云存储）：管理 Drive 文件和文件夹，包含上传/下载、创建文件夹、复制/移动/删除、查看元数据、评论/权限/订阅、标题、版本和本地文件导入。用户需要整理云盘目录、处理云空间资源 URL/token、判断链接类型/真实 token/标题，或导入 Word/Markdown/Excel/CSV/PPTX/.base 为 docx/sheet/bitable/slides 时使用；doubao.com 云空间 UR... |
 | `lark-im` (`skills/lark-im`) | 58 | 飞书即时通讯：收发消息和管理群聊。发送和回复消息、搜索聊天记录、管理群聊成员、上传下载图片和文件（支持大文件分片下载）、管理表情回复、发送应用内/短信/电话加急、发送和处理交互卡片（Interactive Card）、监听卡片按钮回调（card.action.trigger）。当用户需要发消息、查看或搜索聊天记录、下载聊天中的文件、查看群成员、搜索群、创建群聊或话题群、管理标记数据、管理 Feed 置顶（添加/移除/查询置顶会话）... |
-| `lark-mail` (`skills/lark-mail`) | 31 | 飞书邮箱：Use when user mentions 起草邮件、写邮件、草稿、发送/回复/转发邮件、查阅邮件、看邮件、搜索邮件、邮件文件夹、邮件标签、邮件联系人、监听新邮件、邮件收信规则等；use for mail/email intent only. Do not use for docs/sheets/calendar/auth setup/pure contact lookup/IM chat tasks. |
+| `lark-mail` (`skills/lark-mail`) | 33 | 飞书邮箱：Use when user mentions 起草邮件、写邮件、草稿、发送/回复/转发邮件、查阅邮件、看邮件、搜索邮件、邮件文件夹、邮件标签、邮件联系人、监听新邮件、邮件收信规则等；use for mail/email intent only. Do not use for docs/sheets/calendar/auth setup/pure contact lookup/IM chat tasks. |
 | `lark-markdown` (`skills/lark-markdown`) | 6 | 飞书 Markdown：查看、创建、上传、编辑和比较 Markdown 文件。当用户需要创建或编辑 Markdown 文件、读取、修改、局部 patch 或比较差异时使用。不负责将 Markdown 导入为飞书在线文档，也不负责文件搜索、权限、评论、移动、删除等云空间管理操作。 |
 | `lark-minutes` (`skills/lark-minutes`) | 9 | 飞书妙记：搜索妙记、查看妙记基础信息、下载/上传音视频、读取或编辑妙记的产物内容、改标题、替换说话人/关键词。当给出minute_token、本地音视频文件，要查/改/转妙记产物时使用；本地音视频转纪要/逐字稿优先走本 skill，不要用 ffmpeg/whisper 本地转写。不负责：获取会议关联妙记，或仅按自然语言标题定位纪要 |
 | `lark-note` (`skills/lark-note`) | 3 | 飞书会议纪要（Note）直查：已知 note_id 时查询纪要详情、展示类型、关联文档 token，并读取 unified 原始逐字记录。当用户已持有 note_id，或从文档显式 vc-node-id 获得 note_id 时使用。不负责会议/日程/妙记定位、文档标题搜索或 Docx 正文读取。 |
@@ -47,7 +49,7 @@
 | `lark-openapi-explorer` (`skills/lark-openapi-explorer`) | 1 | 飞书/Lark 原生 OpenAPI 探索：从官方文档库中挖掘未经 CLI 封装的原生 OpenAPI 接口。当用户的需求无法被现有 lark-* skill 或 lark-cli 已注册命令满足，需要查找并调用原生飞书 OpenAPI 时使用。 |
 | `lark-ppt` (`skills/lark-ppt`) | 1 | 创建令人惊艳的 PPT 演示文稿。当用户要求制作、生成、创建 PPT/演示文稿/幻灯片，或者要求生成 PPT 大纲、修改已有 PPT 页面内容时，使用此技能。覆盖完整的 PPT 工作流：素材收集（互联网搜索与网页抓取）、图片获取（搜索真实图片或生成创意图片）、PPT 页面生成与编辑。也适用于用户上传附件并要求据此制作 PPT、提供模板要求套用、或就 PPT 设计（配色/排版/字体）进行咨询的场景。即使用户只是简单说'帮我做个 PP... |
 | `lark-project` (`skills/lark-project`) | 4 | 飞书项目（Meego/Meegle）操作工具。支持查询和管理工作项、节点流转、视图查询、个人待办、排期统计等功能。 Use when user needs to work with Feishu/Lark Meego project management — including querying work items, creating/updating work items, completing workflow nodes,... |
-| `lark-sheets` (`skills/lark-sheets`) | 30 | 表格全场景处理：本地 Excel/CSV 与在线表格（飞书、doubao.com 的 /sheets/ 链接）的创建、读写、分析、计算、建模、语义处理、可视化与美化。**只要用户输入包含表格类附件——上传 .xlsx/.xls/.csv 文件，或给出 feishu/doubao.com 的 /sheets/ 链接或 token——必须加载本技能。** 此外，用户口述数据要整理成表，或要求计算/统计/建模/预测/透视/可视化/美化/... |
+| `lark-sheets` (`skills/lark-sheets`) | 32 | 表格全场景处理：本地 Excel/CSV 与在线表格（飞书、doubao.com 的 /sheets/ 链接）的创建、读写、分析、计算、建模、语义处理、可视化与美化。**只要用户输入包含表格类附件——上传 .xlsx/.xls/.csv 文件，或给出 feishu/doubao.com 的 /sheets/ 链接或 token——必须加载本技能。** 此外，用户口述数据要整理成表，或要求计算/统计/建模/预测/透视/可视化/美化/... |
 | `lark-task` (`skills/lark-task`) | 18 | 飞书任务：管理任务、清单和任务智能体。创建待办任务、查看和更新任务状态、拆分子任务、组织任务清单、分配协作成员、上传任务附件、注册或注销任务智能体、更新任务智能体的主页数据、写入智能体任务记录。当用户需要创建待办事项、查看任务列表、跟踪任务进度、管理项目清单或给他人分配任务、为任务上传附件文件、注册注销任务智能体、更新智能体主页数据、写入任务记录时使用。 |
 | `lark-vc` (`skills/lark-vc`) | 5 | 飞书视频会议：搜索历史会议记录、查询会议纪要（总结/待办/章节/逐字稿）、查询参会人快照。当用户查询已结束的会议、获取会议产物（纪要/妙记）、查看参会人时使用；查询未来日程走 lark-calendar。不负责：Agent 真实入会/离会、会中实时事件。 |
 | `lark-whiteboard` (`skills/lark-whiteboard`) | 30 | 飞书画板：查询和编辑飞书云文档中的画板。支持导出画板为预览图片、导出原始节点结构、使用多种格式更新画板内容。 当用户需要查看画板内容、导出画板图片、编辑画板时使用此 skill。不负责：飞书云文档内容编辑（lark-doc）、文档内嵌电子表格/Base（lark-sheets / lark-base）。 |
@@ -55,12 +57,12 @@
 | `lark-workflow-meeting-summary` (`skills/lark-workflow-meeting-summary`) | 1 | 会议纪要整理工作流：汇总指定时间范围内的会议纪要并生成结构化报告。当用户需要整理会议纪要、生成会议周报、回顾一段时间内的会议内容时使用。 |
 | `lark-workflow-standup-report` (`skills/lark-workflow-standup-report`) | 1 | 日程待办摘要：编排 calendar +agenda 和 task +get-my-tasks，生成指定日期的日程与未完成任务摘要。适用于了解今天/明天/本周的安排。 |
 | `skill-creator-for-task` (`skills/skill-creator-for-task`) | 6 | 创建有效 Skill 的指南。当用户想要创建新的 Skill，或更新现有 Skill，以便通过专门知识、工作流程或工具集成来扩展 AI Agent 能力时，应使用此 Skill。 |
-| `xiaohe-medical-report` (`skills/xiaohe-medical-report`) | 17 | 必须在用户需要医学报告解读时使用。包括：用户上传体检报告、检验报告、检查单、化验单、血常规/尿常规/生化/肝肾功能/血脂血糖等检验检查图片、照片、截图、PDF、文档、表格或文件；用户只发报告图片/附件且没有文字说明；用户说“帮我看看”“看下这个报告”“这个结果正常吗”“有什么问题”“报告怎么解读”；用户表达体检报告解读、医院报告解读、影像/超声/CT/MRI/内镜/病理报告解读等需求。用于梳理报告内容，解释异常指标和检查发现，识别... |
 
 ## 最近变更
 
 | Date | Change Log | Summary |
 | --- | --- | --- |
+| 2026-07-18-180002 | [2026-07-18-180002](change-logs/2026-07-18-180002.md) | 本次同步新增 25 个文件、修改 57 个文件、删除 18 个文件。 新增 skill：doubao-medical-report, doubao-record。 移除的 skill 已归档：xiaohe-medical-report。 受影响范围：doubao-medical-report, doubao-record, lark-doc, lark... |
 | 2026-07-15-172708 | [2026-07-15-172708](change-logs/2026-07-15-172708.md) | 本次同步新增 96 个文件、修改 2 个文件、删除 7 个文件。 新增 skill：doubao-academic-evaluator, doubao-academic-polish, doubao-identity, doubao-newmedia-writing, xiaohe-medical-report。 移除的 skill 已归档：douba... |
 | 2026-07-13-180002 | [2026-07-13-180002](change-logs/2026-07-13-180002.md) | 本次同步新增 57 个文件、修改 60 个文件、删除 5 个文件。 受影响范围：doubao-creative-design, doubao-creative-drama, doubao-cron-scheduler, doubao-qa, lark-approval, lark-base, lark-calendar, lark-doc, lark-... |
 | 2026-07-07-161744 | [2026-07-07-161744](change-logs/2026-07-07-161744.md) | 本次同步新增 461 个文件、修改 0 个文件、删除 0 个文件。 新增 skill：browser-task, doubao-app-builder, doubao-creative-design, doubao-creative-drama, doubao-creative-video, doubao-cron-scheduler, doubao-... |

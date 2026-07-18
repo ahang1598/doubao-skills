@@ -243,7 +243,7 @@ ResNet-50、SVM 等具体实现放到从属权利要求中。
 **交付顺序**：权利要求书 → 说明书 → 摘要 → 附图。
 
 **文档格式交付**：
-- 有模板：`uv run ../scripts/docx_edit.py replace 模板.docx 输出.docx replacements.json`
-- 无模板：`uv run ../scripts/create_docx.py content.json output.docx`
+- 有模板：`uv run skills/lark-doc/office-word/scripts/docx_edit.py replace 模板.docx 输出.docx replacements.json`
+- 无模板：`uv run skills/lark-doc/office-word/scripts/create_docx.py content.json output.docx`
 
-运行 `uv run ../scripts/docx_edit.py --help` 或 `uv run ../scripts/create_docx.py --help` 查看详细用法。
+运行 `uv run skills/lark-doc/office-word/scripts/docx_edit.py --help` 或 `uv run skills/lark-doc/office-word/scripts/create_docx.py --help` 查看详细用法。

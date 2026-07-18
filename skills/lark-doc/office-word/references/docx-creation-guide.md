@@ -221,6 +221,6 @@ new Paragraph({
 
 After creating the file, validate it by re-extracting — if it opens and the content is intact, the file is valid:
 ```bash
-uv run scripts/extract_docx.py doc.docx
+uv run skills/lark-doc/office-word/scripts/extract_docx.py doc.docx
 ```
-If extraction fails or the content is wrong, unpack with `uv run scripts/docx_edit.py unpack`, fix the XML, and repack with `uv run scripts/docx_edit.py pack`.
+If extraction fails or the content is wrong, unpack with `uv run skills/lark-doc/office-word/scripts/docx_edit.py unpack`, fix the XML, and repack with `uv run skills/lark-doc/office-word/scripts/docx_edit.py pack`.

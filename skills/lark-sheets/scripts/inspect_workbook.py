@@ -236,13 +236,36 @@ def build_profile(path):
     return result
 
 
+def print_open_failure_guidance(path, err):
+    """本地库解析失败时，在报错现场直接给出正确回退路径。
+
+    与 SKILL.md 预检小节同一条规则：本地库（openpyxl / pandas 等）打不开时，
+    改用 +workbook-import 导入飞书在线表格、走飞书引擎读取，不要在本地解压 xlsx /
+    手写 XML 解析绕路——飞书服务端导入解析更宽容，能吃下炸翻本地库的坏文件且数据无损。
+    """
+    sys.stderr.write(
+        f"\n[inspect_workbook] 本地无法解析该 Excel：{type(err).__name__}: {err}\n"
+        "这是本地库（openpyxl / pandas 等）的解析限制，通常不代表数据本身损坏。\n"
+        "\n"
+        "✅ 正确处理：导入飞书在线表格，再走飞书引擎（SKILL.md 第三章）读取——\n"
+        f'   lark-cli sheets +workbook-import --file "{path}"\n'
+        "\n"
+        "不要改用解压 xlsx 直读 XML、手写底层解析等本地绕路：飞书服务端导入解析更宽容，\n"
+        "能吃下炸翻本地库的坏文件且数据无损，本地绕路只会更慢更脆。\n"
+    )
+
+
 def main():
     if len(sys.argv) < 2:
         print("Usage: python scripts/inspect_workbook.py <excel_path> [output_json]")
         sys.exit(2)
     path = sys.argv[1]
     out = sys.argv[2] if len(sys.argv) > 2 else "probe_result.json"
-    profile = build_profile(path)
+    try:
+        profile = build_profile(path)
+    except Exception as err:  # 任何本地解析失败 → 引导转 +workbook-import，不要本地绕路
+        print_open_failure_guidance(path, err)
+        sys.exit(1)
     with open(out, "w", encoding="utf-8") as f:
         json.dump(profile, f, ensure_ascii=False, indent=2)
     print(f"Wrote: {out}")

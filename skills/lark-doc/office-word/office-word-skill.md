@@ -67,13 +67,13 @@
 
 ```bash
 # 解包：将 .docx 解压为可编辑的 XML 目录
-uv run scripts/docx_edit.py unpack 模板.docx unpacked/
+uv run skills/lark-doc/office-word/scripts/docx_edit.py unpack 模板.docx unpacked/
 
 # 打包：将编辑后的 XML 目录重新打包为 .docx
-uv run scripts/docx_edit.py pack unpacked/ 输出.docx
+uv run skills/lark-doc/office-word/scripts/docx_edit.py pack unpacked/ 输出.docx
 
 # 替换：直接在 .docx 中做文本替换（保留原格式）
-uv run scripts/docx_edit.py replace 原文件.docx 输出.docx replacements.json
+uv run skills/lark-doc/office-word/scripts/docx_edit.py replace 原文件.docx 输出.docx replacements.json
 ```
 
 replacements.json 格式：
@@ -91,38 +91,38 @@ replacements.json 格式：
 
 ```bash
 # 提取为可读文本（Markdown 风格标记结构）
-uv run scripts/extract_docx.py resume.docx
+uv run skills/lark-doc/office-word/scripts/extract_docx.py resume.docx
 
 # 提取为 JSON 结构化数据
-uv run scripts/extract_docx.py resume.docx --format structured
+uv run skills/lark-doc/office-word/scripts/extract_docx.py resume.docx --format structured
 
 # 指定引擎：auto（默认）、python-docx、xml
-uv run scripts/extract_docx.py resume.docx --engine xml
+uv run skills/lark-doc/office-word/scripts/extract_docx.py resume.docx --engine xml
 ```
 
 ### 5.3 extract_pdf.py — PDF 文本提取
 
 ```bash
 # 提取 PDF 文本（支持多栏检测和表格提取）
-uv run scripts/extract_pdf.py resume.pdf
+uv run skills/lark-doc/office-word/scripts/extract_pdf.py resume.pdf
 
 # 输出为结构化 JSON
-uv run scripts/extract_pdf.py resume.pdf --format structured
+uv run skills/lark-doc/office-word/scripts/extract_pdf.py resume.pdf --format structured
 ```
 
 ### 5.4 extract_text.py — 多格式文本提取
 
 ```bash
 # 支持 .docx / .doc / .pdf / .txt / .md / .html
-uv run scripts/extract_text.py 文件.docx
-uv run scripts/extract_text.py 文件.pdf -o output.txt
+uv run skills/lark-doc/office-word/scripts/extract_text.py 文件.docx
+uv run skills/lark-doc/office-word/scripts/extract_text.py 文件.pdf -o output.txt
 ```
 
 ### 5.5 create_docx.py — 从 JSON 生成 .docx
 
 ```bash
 # 从 content.json 生成标准排版的 .docx（专利格式）
-uv run scripts/create_docx.py content.json output.docx
+uv run skills/lark-doc/office-word/scripts/create_docx.py content.json output.docx
 ```
 
 ## 6. 参考文档（需要时读取）

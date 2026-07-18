@@ -35,12 +35,12 @@
 
 ```bash
 # Word — 保留标题层级、加粗、列表等结构
-uv run ../scripts/extract_docx.py resume.docx
-uv run ../scripts/extract_docx.py resume.docx --format structured   # JSON 格式
+uv run skills/lark-doc/office-word/scripts/extract_docx.py resume.docx
+uv run skills/lark-doc/office-word/scripts/extract_docx.py resume.docx --format structured   # JSON 格式
 
 # PDF — 自动检测多栏、提取表格
-uv run ../scripts/extract_pdf.py resume.pdf
-uv run ../scripts/extract_pdf.py resume.pdf --format structured
+uv run skills/lark-doc/office-word/scripts/extract_pdf.py resume.pdf
+uv run skills/lark-doc/office-word/scripts/extract_pdf.py resume.pdf --format structured
 
 # Word 含修订标记时
 pandoc --track-changes=all resume.docx -o resume.md
@@ -52,13 +52,13 @@ pandoc --track-changes=all resume.docx -o resume.md
 
 ```bash
 # 1. 解包：将 .docx 解压为可编辑的 XML 文件
-uv run scripts/docx_edit.py unpack resume.docx unpacked/
+uv run skills/lark-doc/office-word/resume-writing/scripts/docx_edit.py unpack resume.docx unpacked/
 
 # 2. 编辑：在 unpacked/word/document.xml 中修改文本
 #    （用编辑工具做字符串替换，不要写脚本）
 
 # 3. 打包：重新生成 .docx
-uv run scripts/docx_edit.py pack unpacked/ resume_updated.docx
+uv run skills/lark-doc/office-word/resume-writing/scripts/docx_edit.py pack unpacked/ resume_updated.docx
 ```
 
 ## 回填流程（最重要的部分）

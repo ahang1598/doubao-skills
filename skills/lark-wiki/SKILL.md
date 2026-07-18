@@ -16,7 +16,7 @@ metadata:
 
 ## 快速决策
 
-- 用户要**整理 / 盘点 / 归类 / 重构知识库、个人文档库、文档库目录或 Wiki 节点结构**，或要生成整理方案、目标目录树、移动计划时，不要只使用 Wiki 节点 API。必须先阅读 [`../lark-drive/references/lark-drive-workflow-knowledge-organize.md`](../lark-drive/references/lark-drive-workflow-knowledge-organize.md)，该 workflow 负责 Drive / Wiki / 个人文档库的统一入口解析、资源盘点、分类计划、写前确认和结果验证。
+- 用户要**整理 / 盘点 / 归类 / 重构知识库、个人文档库、文档库目录或 Wiki 节点结构**，或要生成整理方案、目标目录树、移动计划时，不要只使用 Wiki 节点 API。必须先阅读 [`../lark-drive/references/lark-drive-workflow.md`](../lark-drive/references/lark-drive-workflow.md)，再按其中 `Workflow Registry` 进入 [`knowledge_organize`](../lark-drive/references/lark-drive-workflow-knowledge-organize.md) workflow；该 workflow 负责 Drive / Wiki / 个人文档库的统一入口解析、资源盘点、分类计划、写前确认和结果验证。
 - 用户给的是知识库 URL（`.../wiki/<token>`），且后续要查成员/加成员/删成员：先调用 `lark-cli wiki spaces get_node --params '{"token":"<wiki_token>"}'` 获取 `space_id`，后续成员接口统一使用 `space_id`。
 - 用户要**删除**知识空间（`wiki +delete-space`）但只给了名称或 URL：**不能**把名称 / URL 原样传给 `--space-id`，必须先解析出真实 `space_id`。解析方式：
   - URL（`.../wiki/<token>`）：`lark-cli wiki spaces get_node --params '{"token":"<wiki_token>"}' --format json`，读 `data.node.space_id`。
@@ -29,7 +29,7 @@ metadata:
 - 用户要列出 Wiki 节点：先用 `wiki +space-list --as user` 拿数字 `space_id`，再用 `wiki +node-list --space-id <space_id>`。不要把 wiki URL、node token、doc token、名称直接当 `--space-id`。钻子节点时 `--parent-node-token` 必须是 wiki node token；如果用户给的是 docx/sheet/base URL，先用 `wiki +node-get --node-token <url>` 解析出 `node_token`。
 - `wiki +node-list` 命中 `invalid_parameters`、`not_found`、`permission_denied` 时，不要重复调用同一参数；按 hint 修 `space_id` / `parent_node_token` / 权限。只有 `rate_limit` 才做退避重试。
 - 用户说“给知识库添加成员/管理员”：先把目标解析成“用户 / 群 / 部门 / 应用”四类之一，再决定 `--member-type`，不要先调 `wiki +member-add` 再根据报错反推类型。
-- 用户说“用户 / 群 / 部门 / 应用 + 添加成员”：先解析对应 ID，再执行 `wiki +member-add`。
+- 用户说“用户 / 群 / 应用 + 添加成员”：先解析对应 ID，再执行 `wiki +member-add`。
 - 用户说“查看 / 列出空间成员”：用 `wiki +member-list`；该 shortcut 默认只取一页，多成员场景显式加 `--page-all`。
 - 用户说“移除 / 删除空间成员”：用 `wiki +member-remove`，必须传齐原始授予时的 `--member-type` 和 `--member-role`（不知道就先 `wiki +member-list` 查一下）。
 

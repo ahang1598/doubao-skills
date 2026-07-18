@@ -18,10 +18,10 @@
 ### 第 1 步：解包
 
 ```bash
-uv run scripts/docx_edit.py unpack document.docx unpacked/
+uv run skills/lark-doc/office-word/scripts/docx_edit.py unpack document.docx unpacked/
 ```
 
-解压 XML、格式化、合并相邻文本节点、转换智能引号为 XML 实体。需要先看纯文本结构时，用 `uv run scripts/extract_docx.py document.docx`。
+解压 XML、格式化、合并相邻文本节点、转换智能引号为 XML 实体。需要先看纯文本结构时，用 `uv run skills/lark-doc/office-word/scripts/extract_docx.py document.docx`。
 
 ### 第 2 步：编辑 XML
 
@@ -43,7 +43,7 @@ uv run scripts/docx_edit.py unpack document.docx unpacked/
 ### 第 3 步：回包
 
 ```bash
-uv run scripts/docx_edit.py pack unpacked/ output.docx
+uv run skills/lark-doc/office-word/scripts/docx_edit.py pack unpacked/ output.docx
 ```
 
 自动修复空格、压缩 XML、生成 DOCX。
