@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<presentation xmlns="http://www.larkoffice.com/sml/2.0" width="960" height="540">
+  <title>{{主题}}医学文献循证检索分析汇报</title>
+
+  <slide id="cover">
+    <style><fill><fillColor color="rgb(15,23,42)"/></fill></style>
+    <data>
+      <shape type="text" topLeftX="70" topLeftY="150" width="780" height="90">
+        <content textType="title"><p><strong><span color="rgb(255,255,255)" fontSize="40">{{主题}}医学文献循证检索分析</span></strong></p></content>
+      </shape>
+      <shape type="text" topLeftX="72" topLeftY="265" width="760" height="42">
+        <content textType="sub-headline"><p><span color="rgb(203,213,225)" fontSize="20">{{用途：指南查新/热点分析/课题论证/论文写作/学习资料}}</span></p></content>
+      </shape>
+      <line startX="72" startY="340" endX="230" endY="340"><border color="rgb(20,184,166)" width="4"/></line>
+      <shape type="text" topLeftX="72" topLeftY="370" width="720" height="34">
+        <content textType="caption"><p><span color="rgb(226,232,240)" fontSize="13">检索截止日期：{{日期}}</span></p></content>
+      </shape>
+    </data>
+  </slide>
+
+  <slide id="answer">
+    <style><fill><fillColor color="rgb(248,250,252)"/></fill></style>
+    <data>
+      <shape type="text" topLeftX="60" topLeftY="34" width="760" height="50">
+        <content><p><strong><span color="rgb(15,23,42)" fontSize="30">结论先行</span></strong></p></content>
+      </shape>
+      <shape type="rect" topLeftX="60" topLeftY="105" width="840" height="92">
+        <fill><fillColor color="rgb(236,253,245)"/></fill><border color="rgb(16,185,129)" width="2"/>
+      </shape>
+      <shape type="text" topLeftX="86" topLeftY="126" width="790" height="48">
+        <content><p><strong><span color="rgb(6,95,70)" fontSize="23">{{核心答案与证据确定性}}</span></strong></p></content>
+      </shape>
+      <shape type="rect" topLeftX="60" topLeftY="230" width="258" height="170"><fill><fillColor color="rgb(255,255,255)"/></fill><border color="rgb(203,213,225)" width="1"/></shape>
+      <shape type="text" topLeftX="82" topLeftY="252" width="214" height="112"><content><p><strong><span color="rgb(14,116,144)" fontSize="17">指南/共识</span></strong></p><p><span color="rgb(51,65,85)" fontSize="13">{{G1/G2 推荐方向}}</span></p></content></shape>
+      <shape type="rect" topLeftX="351" topLeftY="230" width="258" height="170"><fill><fillColor color="rgb(255,255,255)"/></fill><border color="rgb(203,213,225)" width="1"/></shape>
+      <shape type="text" topLeftX="373" topLeftY="252" width="214" height="112"><content><p><strong><span color="rgb(22,101,52)" fontSize="17">关键研究</span></strong></p><p><span color="rgb(51,65,85)" fontSize="13">{{SR1/R1 核心发现}}</span></p></content></shape>
+      <shape type="rect" topLeftX="642" topLeftY="230" width="258" height="170"><fill><fillColor color="rgb(255,251,235)"/></fill><border color="rgb(245,158,11)" width="1"/></shape>
+      <shape type="text" topLeftX="664" topLeftY="252" width="214" height="112"><content><p><strong><span color="rgb(146,64,14)" fontSize="17">局限/空白</span></strong></p><p><span color="rgb(51,65,85)" fontSize="13">{{研究局限、证据空白和研究机会}}</span></p></content></shape>
+    </data>
+  </slide>
+
+  <slide id="scope">
+    <style><fill><fillColor color="rgb(255,255,255)"/></fill></style>
+    <data>
+      <shape type="text" topLeftX="60" topLeftY="34" width="760" height="48"><content><p><strong><span color="rgb(15,23,42)" fontSize="28">检索问题与范围</span></strong></p></content></shape>
+      <shape type="rect" topLeftX="70" topLeftY="105" width="820" height="330"><fill><fillColor color="rgb(239,246,255)"/></fill><border color="rgb(147,197,253)" width="1"/></shape>
+      <shape type="text" topLeftX="100" topLeftY="130" width="760" height="270">
+        <content>
+          <p><strong><span color="rgb(30,64,175)" fontSize="18">框架：{{PICO/PCC/论文论点/学习目标}}</span></strong></p>
+          <ul>
+            <li><p><span fontSize="13">主题/人群：{{主题或人群}}</span></p></li>
+            <li><p><span fontSize="13">干预/暴露/概念：{{干预或概念}}</span></p></li>
+            <li><p><span fontSize="13">结局/关注点：{{结局、热点、指南更新、论文论点}}</span></p></li>
+            <li><p><span fontSize="13">时间/语言/地域：{{范围}}</span></p></li>
+            <li><p><span fontSize="13">纳入文献：{{指南、综述、RCT、队列、最新研究、安全来源等}}</span></p></li>
+            <li><p><span fontSize="13">检索来源：{{PubMed/PMC、Cochrane、指南官网、学会官网、监管机构、期刊官网等}}</span></p></li>
+            <li><p><span fontSize="13">核心关键词：{{3-8 个中英文关键词、缩写或 MeSH 近似词}}</span></p></li>
+            <li><p><span fontSize="13">效率/局限：{{检索批次、Fetch 取材范围、停止扩展理由}}</span></p></li>
+          </ul>
+        </content>
+      </shape>
+    </data>
+  </slide>
+
+  <slide id="core-logic">
+    <style><fill><fillColor color="rgb(248,250,252)"/></fill></style>
+    <data>
+      <shape type="text" topLeftX="60" topLeftY="34" width="760" height="48"><content><p><strong><span color="rgb(15,23,42)" fontSize="28">论文关系/核心逻辑梳理</span></strong></p></content></shape>
+      <shape type="rect" topLeftX="370" topLeftY="100" width="220" height="58"><fill><fillColor color="rgb(219,234,254)"/></fill><border color="rgb(37,99,235)" width="2"/></shape>
+      <shape type="text" topLeftX="392" topLeftY="115" width="176" height="28"><content><p textAlign="center"><strong><span color="rgb(30,64,175)" fontSize="15">主题问题</span></strong></p></content></shape>
+      <shape type="rect" topLeftX="70" topLeftY="220" width="170" height="60"><fill><fillColor color="rgb(245,243,255)"/></fill><border color="rgb(124,58,237)" width="1"/></shape>
+      <shape type="text" topLeftX="88" topLeftY="236" width="134" height="26"><content><p textAlign="center"><strong><span color="rgb(91,33,182)" fontSize="14">G1 指南</span></strong></p></content></shape>
+      <shape type="rect" topLeftX="290" topLeftY="220" width="170" height="60"><fill><fillColor color="rgb(236,253,245)"/></fill><border color="rgb(16,185,129)" width="1"/></shape>
+      <shape type="text" topLeftX="308" topLeftY="236" width="134" height="26"><content><p textAlign="center"><strong><span color="rgb(6,95,70)" fontSize="14">SR1 综述</span></strong></p></content></shape>
+      <shape type="rect" topLeftX="510" topLeftY="220" width="170" height="60"><fill><fillColor color="rgb(240,253,244)"/></fill><border color="rgb(22,163,74)" width="1"/></shape>
+      <shape type="text" topLeftX="528" topLeftY="236" width="134" height="26"><content><p textAlign="center"><strong><span color="rgb(22,101,52)" fontSize="14">R1 研究</span></strong></p></content></shape>
+      <shape type="rect" topLeftX="730" topLeftY="220" width="170" height="60"><fill><fillColor color="rgb(255,251,235)"/></fill><border color="rgb(245,158,11)" width="1"/></shape>
+      <shape type="text" topLeftX="748" topLeftY="236" width="134" height="26"><content><p textAlign="center"><strong><span color="rgb(146,64,14)" fontSize="14">N1 最新</span></strong></p></content></shape>
+      <shape type="rect" topLeftX="370" topLeftY="360" width="220" height="58"><fill><fillColor color="rgb(236,253,245)"/></fill><border color="rgb(22,163,74)" width="2"/></shape>
+      <shape type="text" topLeftX="392" topLeftY="375" width="176" height="28"><content><p textAlign="center"><strong><span color="rgb(22,101,52)" fontSize="15">综合结论</span></strong></p></content></shape>
+      <line startX="480" startY="158" endX="155" endY="220"><border color="rgb(100,116,139)" width="2"/></line>
+      <line startX="480" startY="158" endX="375" endY="220"><border color="rgb(100,116,139)" width="2"/></line>
+      <line startX="480" startY="158" endX="595" endY="220"><border color="rgb(100,116,139)" width="2"/></line>
+      <line startX="480" startY="158" endX="815" endY="220"><border color="rgb(100,116,139)" width="2"/></line>
+      <line startX="155" startY="280" endX="480" endY="360"><border color="rgb(124,58,237)" width="2"/></line>
+      <line startX="375" startY="280" endX="480" endY="360"><border color="rgb(16,185,129)" width="2"/></line>
+      <line startX="595" startY="280" endX="480" endY="360"><border color="rgb(22,163,74)" width="2"/></line>
+      <line startX="815" startY="280" endX="480" endY="360"><border color="rgb(245,158,11)" width="2"/></line>
+      <shape type="text" topLeftX="70" topLeftY="470" width="820" height="28"><content><p><span color="rgb(100,116,139)" fontSize="11">图中 G/SR/R/N 节点对应本次纳入文献；完整链接见参考文献页。</span></p></content></shape>
+    </data>
+  </slide>
+
+  <slide id="milestone-timeline">
+    <style><fill><fillColor color="rgb(255,255,255)"/></fill></style>
+    <data>
+      <shape type="text" topLeftX="60" topLeftY="34" width="800" height="48"><content><p><strong><span color="rgb(15,23,42)" fontSize="28">关键研究里程碑时间线</span></strong></p></content></shape>
+      <shape type="text" topLeftX="62" topLeftY="78" width="820" height="24"><content><p><span color="rgb(100,116,139)" fontSize="12">年份较多时合并为时间段/研究阶段；每个时间节点尽量放 2-5 个代表文献，避免“一年一篇”。</span></p></content></shape>
+      <line startX="85" startY="165" endX="875" endY="165"><border color="rgb(15,23,42)" width="2"/></line>
+
+      <shape type="rect" topLeftX="70" topLeftY="118" width="170" height="52"><fill><fillColor color="rgb(245,243,255)"/></fill><border color="rgb(124,58,237)" width="1"/></shape>
+      <shape type="text" topLeftX="86" topLeftY="132" width="138" height="24"><content><p textAlign="center"><strong><span color="rgb(91,33,182)" fontSize="14">{{2000-2010 基础机制}}</span></strong></p></content></shape>
+      <shape type="rect" topLeftX="70" topLeftY="210" width="170" height="58"><fill><fillColor color="rgb(250,245,255)"/></fill><border color="rgb(221,214,254)" width="1"/></shape>
+      <shape type="text" topLeftX="84" topLeftY="224" width="142" height="30"><content><p textAlign="center"><span fontSize="12">{{[R1] 研究简称}}</span></p><p textAlign="center"><span fontSize="11">{{奠定背景}}</span></p></content></shape>
+      <shape type="rect" topLeftX="70" topLeftY="286" width="170" height="58"><fill><fillColor color="rgb(250,245,255)"/></fill><border color="rgb(221,214,254)" width="1"/></shape>
+      <shape type="text" topLeftX="84" topLeftY="300" width="142" height="30"><content><p textAlign="center"><span fontSize="12">{{[SR1] 综述简称}}</span></p><p textAlign="center"><span fontSize="11">{{汇总证据}}</span></p></content></shape>
+
+      <shape type="rect" topLeftX="285" topLeftY="118" width="170" height="52"><fill><fillColor color="rgb(236,253,245)"/></fill><border color="rgb(16,185,129)" width="1"/></shape>
+      <shape type="text" topLeftX="301" topLeftY="132" width="138" height="24"><content><p textAlign="center"><strong><span color="rgb(6,95,70)" fontSize="14">{{2011-2018 关键研究}}</span></strong></p></content></shape>
+      <shape type="rect" topLeftX="285" topLeftY="210" width="170" height="58"><fill><fillColor color="rgb(240,253,244)"/></fill><border color="rgb(187,247,208)" width="1"/></shape>
+      <shape type="text" topLeftX="299" topLeftY="224" width="142" height="30"><content><p textAlign="center"><span fontSize="12">{{[R2] 研究简称}}</span></p><p textAlign="center"><span fontSize="11">{{扩展机制}}</span></p></content></shape>
+      <shape type="rect" topLeftX="285" topLeftY="286" width="170" height="58"><fill><fillColor color="rgb(240,253,244)"/></fill><border color="rgb(187,247,208)" width="1"/></shape>
+      <shape type="text" topLeftX="299" topLeftY="300" width="142" height="30"><content><p textAlign="center"><span fontSize="12">{{[R3] 研究简称}}</span></p><p textAlign="center"><span fontSize="11">{{验证路径}}</span></p></content></shape>
+
+      <shape type="rect" topLeftX="500" topLeftY="118" width="170" height="52"><fill><fillColor color="rgb(239,246,255)"/></fill><border color="rgb(59,130,246)" width="1"/></shape>
+      <shape type="text" topLeftX="516" topLeftY="132" width="138" height="24"><content><p textAlign="center"><strong><span color="rgb(30,64,175)" fontSize="14">{{2019-2023 指南与综述}}</span></strong></p></content></shape>
+      <shape type="rect" topLeftX="500" topLeftY="210" width="170" height="58"><fill><fillColor color="rgb(239,246,255)"/></fill><border color="rgb(191,219,254)" width="1"/></shape>
+      <shape type="text" topLeftX="514" topLeftY="224" width="142" height="30"><content><p textAlign="center"><span fontSize="12">{{[G1] 指南简称}}</span></p><p textAlign="center"><span fontSize="11">{{更新推荐}}</span></p></content></shape>
+      <shape type="rect" topLeftX="500" topLeftY="286" width="170" height="58"><fill><fillColor color="rgb(239,246,255)"/></fill><border color="rgb(191,219,254)" width="1"/></shape>
+      <shape type="text" topLeftX="514" topLeftY="300" width="142" height="30"><content><p textAlign="center"><span fontSize="12">{{[SR2] 综述简称}}</span></p><p textAlign="center"><span fontSize="11">{{整合证据}}</span></p></content></shape>
+
+      <shape type="rect" topLeftX="715" topLeftY="118" width="170" height="52"><fill><fillColor color="rgb(255,251,235)"/></fill><border color="rgb(245,158,11)" width="1"/></shape>
+      <shape type="text" topLeftX="731" topLeftY="132" width="138" height="24"><content><p textAlign="center"><strong><span color="rgb(146,64,14)" fontSize="14">{{2024-2026 最新进展}}</span></strong></p></content></shape>
+      <shape type="rect" topLeftX="715" topLeftY="210" width="170" height="58"><fill><fillColor color="rgb(255,251,235)"/></fill><border color="rgb(253,230,138)" width="1"/></shape>
+      <shape type="text" topLeftX="729" topLeftY="224" width="142" height="30"><content><p textAlign="center"><span fontSize="12">{{[N1] 最新研究}}</span></p><p textAlign="center"><span fontSize="11">{{提出新方向}}</span></p></content></shape>
+      <shape type="rect" topLeftX="715" topLeftY="286" width="170" height="58"><fill><fillColor color="rgb(255,251,235)"/></fill><border color="rgb(253,230,138)" width="1"/></shape>
+      <shape type="text" topLeftX="729" topLeftY="300" width="142" height="30"><content><p textAlign="center"><span fontSize="12">{{[N2] 最新研究}}</span></p><p textAlign="center"><span fontSize="11">{{提示空白}}</span></p></content></shape>
+
+      <shape type="text" topLeftX="70" topLeftY="470" width="820" height="28"><content><p><span color="rgb(100,116,139)" fontSize="11">节点完整标题、链接、来源/期刊和年份见同页脚注或末页参考文献。</span></p></content></shape>
+    </data>
+  </slide>
+
+  <slide id="references">
+    <style><fill><fillColor color="rgb(255,255,255)"/></fill></style>
+    <data>
+      <shape type="text" topLeftX="60" topLeftY="34" width="820" height="48"><content><p><strong><span color="rgb(15,23,42)" fontSize="28">参考文献（标题｜来源｜类型｜年份｜链接）</span></strong></p></content></shape>
+      <shape type="text" topLeftX="70" topLeftY="110" width="820" height="330">
+        <content>
+          <p><strong><span fontSize="17">核心证据</span></strong></p>
+          <p><strong><span fontSize="13">标题</span></strong><span fontSize="13"> | </span><strong><span fontSize="13">来源</span></strong><span fontSize="13"> | </span><strong><span fontSize="13">类型</span></strong><span fontSize="13"> | </span><strong><span fontSize="13">年份</span></strong><span fontSize="13"> | </span><strong><span fontSize="13">链接</span></strong></p>
+          <p><span fontSize="13">{{标题}}</span><span fontSize="13"> | {{来源/期刊}} | {{指南/系统综述/RCT/队列等}} | {{年份}} | </span><a href="{{url}}"><span fontSize="13">原文/摘要</span></a></p>
+          <p><span fontSize="13">{{标题}}</span><span fontSize="13"> | {{来源/期刊}} | {{最新进展/辅助参考}} | {{年份}} | </span><a href="{{url}}"><span fontSize="13">原文/摘要</span></a></p>
+          <p><span fontSize="13">本页列出核心证据和辅助参考的原文/摘要入口。</span></p>
+        </content>
+      </shape>
+    </data>
+  </slide>
+</presentation>

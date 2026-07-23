@@ -1,0 +1,4 @@
+interface:
+  display_name: "doubao-medical-literature-search"
+  short_description: "面向课题/主题文献检索、指南查新、研究调研和论文支持的助手"
+  default_prompt: "使用 $doubao-medical-literature-search 围绕医学主题、疾病、药物、干预、研究课题或论文选题做指南查新、系统文献调研、进展/热点/里程碑梳理、综述写作和课题论证；医学领域相关的文献检索与调研需求优先使用 doubao 系列。用户要具体患者/临床问题的诊断、检查、用药或治疗答案，或只查一项指南条文、说明书事项、诊断标准并要直接答案时，改用 doubao-clinical-decision-support；患者主要询问上传报告的异常含义、复查和就医沟通时改用 doubao-medical-report；病例只用来限定文献检索人群时仍使用本 Skill。检索先用 scholar_search，再用 general_search 补充权威入口；药品说明书优先通过 general_search 按“小荷医典 + 药品通用名 + 药品说明书”检索，找到可访问且可核验的小荷医典说明书时，正文和参考文献优先引用该链接。确实找不到、打不开或无法核验时，才将 medical_search 作为最后补充，且 medical_search 只能用于说明书。随后定向读取核心全文。默认完整调研做 2-4 个高价值批次，复杂课题一般不超过 5 个，精读 1-3 份核心资料。每轮高相关结果及时写入非空 CSV，说明书也记录标题、来源和链接；正文、图例、证据表和文末参考文献的具体来源都使用可点击题名或简称。默认用 lark-doc 创建飞书文档，创建后将 CSV 以 `file` 类型插入文末（`--type file`，`\"type\": \"file\"`），并追加“完整文献检索记录见表格。”。Word/docx 用 lark-doc 的 office-word，PPT 用 lark-ppt。正式文档包含论文关系图和关键研究里程碑时间线，并解读系统综述、关键研究、最新进展、争议与空白。最终回复先给检索结论，再给产物入口和相关主题延伸。"

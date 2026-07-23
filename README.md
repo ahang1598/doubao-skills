@@ -7,9 +7,9 @@
 - 源目录：`C:\Users\15805\AppData\Local\Doubao\User Data\Default\.doubao\agent_mode\workspace\.skills`
 - 同步目录：`skills/`
 - 任务计划：`DoubaoSkillsDailySync`，每天 18:00 运行
-- 当前 skill 数：42
-- 当前文件数：609
-- 最近变更：[2026-07-18-180002](change-logs/2026-07-18-180002.md) - 本次同步新增 25 个文件、修改 57 个文件、删除 18 个文件。 新增 skill：doubao-medical-report, doubao-record。 移除的 skill 已归档：xiaohe-medical-report。 受影响范围：doubao-medical-report, doubao-record, lark-doc, lark...
+- 当前 skill 数：46
+- 当前文件数：674
+- 最近变更：[2026-07-23-203625](change-logs/2026-07-23-203625.md) - 本次同步新增 65 个文件、修改 0 个文件、删除 0 个文件。 新增 skill：doubao-academic-researcher, doubao-clinical-decision-support, doubao-industry-analysis, doubao-medical-literature-search。 受影响范围：doubao-...
 
 ## Skill 索引
 
@@ -18,7 +18,9 @@
 | `browser-task` (`skills/browser-task`) | 15 | 浏览器自动化任务处理技能。仅在以下情况使用：1) 其他 skill/工具（搜索、API、数据接口等）都无法满足需求，需要通过真实浏览器 GUI 兜底执行；2) 任务必须在具体网站完成登录 / 授权 / 账号内动作（点赞 / 收藏 / 评论 / 发布 / 加购）；3) 命中白名单网站（淘宝/天猫、微博、小红书）的站内检索 / 互动 / 发布需求。当用户仅需要信息检索、文本生成、代码或数据处理时，不要使用本 skill。 |
 | `doubao-academic-evaluator` (`skills/doubao-academic-evaluator`) | 8 | 用资深审稿人和导师的眼光，对科研工作做"只看不改"的诊断。两类任务：一是评判研究想法值不值得做（打分、查新颖性、判可行性）；二是论文评审，给文章成稿挑硬伤、判断能不能投。只负责找问题、下结论、给修改方向，不替你写正文、不替你画图。要动手写作、搭结构、润色语言，请用姊妹技能 doubao-academic-polish。触发于"帮我看看这个想法""值不值得做""投稿前帮我审一遍""能不能投"。 |
 | `doubao-academic-polish` (`skills/doubao-academic-polish`) | 42 | 论文产出侧的总入口与调度技能，把研究者需求分流到四条工作线并统一以飞书云文档交付：语言润色（改语法/去AI腔/中译英投稿级）、结构梳理（理主线/搭大纲/诊断逻辑断点）、英文论文撰写（从想法写出可投稿正文）、中文论文撰写。覆盖写整篇或章节段落、润色已有文字、去AI味、理逻辑搭大纲等需求。只管产出侧；判断想法值不值得做、投稿前评审稿件走姊妹技能 doubao-academic-evaluator。 |
+| `doubao-academic-researcher` (`skills/doubao-academic-researcher`) | 18 | 对一个学术研究话题进行深度文献调研，产出结构严谨、引用可靠的专业综述（survey paper）：先定义研究问题、再系统检索、再深度综合、用证据推导结论。触发于“帮我调研一下”“帮我做个文献综述”“这个方向有哪些工作”“领域最新进展”“帮我深度调研”。评判想法值不值得做用 doubao-academic-evaluator；写论文段落或润色用 doubao-academic-polish；医学领域文献分析调研用 doubao-me... |
 | `doubao-app-builder` (`skills/doubao-app-builder`) | 1 | 统一处理网页应用的生成、编辑，以及围绕已生成产物的问答。既负责把自然语言需求端到端转成可运行、可预览、可交付的网页应用产物，也负责在用户追问产物时基于真实产物作答。当用户要生成网站、H5、网页应用、管理后台、数据看板时使用。当用户要编辑已有网页应用、做功能新增、页面调整或 Bug 修复时使用。当用户提供 PRD、文档、截图或素材包并要求产出可预览网页应用时使用。当用户针对已生成的网页应用，要求总结或解读网页内容、查看或分析源码、解... |
+| `doubao-clinical-decision-support` (`skills/doubao-clinical-decision-support`) | 17 | 循证医学临床辅助决策 Skill。用于医生、护士、研究者、医学生围绕具体患者、病例或明确临床问题，结合病史、检验、用药、合并症、附件与指南研究，完成诊断鉴别、检查路径、药物安全、治疗比较、预后和风险分析。复杂、篇幅较长、包含多个问题或多种药物比较的临床问题默认创建完整循证报告；用户明确要求简短、精简或限定字数时，使用本 Skill 的 quick_answer 模式进行快速回答。不用于主题文献综述、热点调研、患者自我咨询、患者自我... |
 | `doubao-creative-design` (`skills/doubao-creative-design`) | 8 | 当用户要求生成、编辑、改图、修图、重绘、文生图、图生图、扩图、换背景、换风格、局部替换、参考图衍生、系列延展或多比例适配商业创意图片时使用；触发任务包括做图、出图、生成图片、设计海报、主视觉/KV、Banner、封面、社媒配图、社媒长图、电商主图、详情页、产品图、Logo、IP角色、吉祥物、包装、品牌应用物料、活动物料、宣传册、落地页、知识科普海报、教学图、教材插图、课件配图、思维导图、知识图谱、流程图、数据图表、科学结构图、公式... |
 | `doubao-creative-drama` (`skills/doubao-creative-drama`) | 6 | 当用户提出短篇短剧、动画短片、微电影、剧情视频、AI视频、影视化短片、动态漫、宣传片、预告片等**单集 5-10 分钟以内**的短篇制作需求，或包含"做个短剧"、"拍个微电影"、"弄个动画短片"、"写个短剧剧本"、"画个分镜"、"搞个人设/场景资产"、"出个关键帧"、"写图生视频提示词/Seedance提示词"等表达时调用。适用于需要按"规划-剧本-分镜-资产-关键帧-视频生成"推进完整视频生产流程的短篇场景。**不承接几十集连续... |
 | `doubao-creative-video` (`skills/doubao-creative-video`) | 4 | 当用户需要通用视频生成、视频创作、视频提示词规划或文生/图生视频时使用，包括创意视频、产品广告、商品广告、UGC口播/带货/信息流视频、marketing/TVC风格广告、企业宣传片、商务视频、品牌形象片、产品功能介绍、带旁白视频，以及带 ref/参考素材的视频生成。禁止用于短剧创作、剧情脚本、分集剧情、角色扮演故事或影视叙事创作；此类需求应调用 doubao-creative-drama。仅当用户明确要求把短剧/剧情素材改造成普... |
@@ -27,7 +29,9 @@
 | `doubao-earnings-analysis` (`skills/doubao-earnings-analysis`) | 23 | 上市公司财报/季报/年报/业绩的深度因果分析，覆盖A股、港股、美股和中概股。用于解读财报表现、亮点/风险、收入利润等指标变动、超预期或低于预期原因，以及针对毛利率、现金流、费用率等具体变量的归因问题。不用于纯股价、估值、评级、目标价、非财报新闻或未锚定具体公司报告期的宏观行业讨论。 |
 | `doubao-finance-sector` (`skills/doubao-finance-sector`) | 36 | 对【板块/概念/主题/题材】的短期市场热度做专业、可证伪的深度分析，并在用户要求『生成飞书文档』时通过 lark-doc 写入结构化飞书文档。触发场景：当用户问某板块/概念/题材现在热不热、能不能追、为什么走强或降温、持续性如何、成交主要活跃在哪些方向、内部谁强谁弱，或要求生成对应飞书文档时触发。不适用场景：行业长期趋势、单股行情、公司基本面/财报、大盘/宏观等话题，不触发本skill。 |
 | `doubao-identity` (`skills/doubao-identity`) | 6 | 用于回答与豆包产品本身相关的问答，覆盖豆包会员/专业版、隐私安全、记忆功能的知识问答场景，不用于通用创作、翻译、代码、竞品对比或查询用户个人账户/订单/额度数据。 |
+| `doubao-industry-analysis` (`skills/doubao-industry-analysis`) | 15 | 针对某一行业（半导体、新能源、医药、消费等）的中长期基本面与产业研究，覆盖行业定义与规模、产业链与竞争格局、政策与驱动力、景气周期、趋势研判与三情景、盈利质量与落地建议。先想清楚这篇报告要证明什么判断（判断主线），再用三级数据分级取证、按固定五大板块写透，最终交付一份可直接用于战略规划、投资决策与商业化落地的飞书深度报告。对于一句话能答的问题，不要凭训练记忆或随手搜索口头作答，一律走本 Skill 的结构化多源论证。不触发并转其他... |
 | `doubao-market-hotspot` (`skills/doubao-market-hotspot`) | 13 | 面向普通股民的市场整体与宏观事件解读。用户关注全市场涨跌、交易主线、市场热点、宏观/政策/新闻/风险事件、央行利率、通胀就业、跨资产联动、资金风险偏好或市场情绪时使用。命中后先输出结构完整、观点深入的对话框分析，用户确认后通过 lark-doc 写入飞书 XML 文档。不要用于单股、具体板块/行业/公司/财报分析，或荐股、目标价、买卖点、仓位建议；不确定时先澄清。飞书交付需已安装 lark-doc 伴生 Skill。 |
+| `doubao-medical-literature-search` (`skills/doubao-medical-literature-search`) | 15 | 医学文献循证检索分析 Skill。医学领域相关的文献检索与调研需求优先使用 doubao 系列。用于医生、护士、研究者、医学生或医学内容团队围绕医学主题、疾病、药物、干预、诊断方法、研究课题或论文选题，开展指南/共识检索查新、系统文献调研、研究热点与前沿分析、里程碑证据调研、综述写作、参考文献整理和课题论证。重点回答“有哪些文献、结论是什么、研究如何发展、证据空白是什么”；不用于具体病例决策、直接临床问答、患者自我报告解读或轻量文... |
 | `doubao-medical-report` (`skills/doubao-medical-report`) | 17 | 必须在用户需要医学报告解读时使用。包括：用户上传体检报告、检验报告、检查单、化验单、血常规/尿常规/生化/肝肾功能/血脂血糖等检验检查图片、照片、截图、PDF、文档、表格或文件；用户只发报告图片/附件且没有文字说明；用户说“帮我看看”“看下这个报告”“这个结果正常吗”“有什么问题”“报告怎么解读”；用户表达体检报告解读、医院报告解读、影像/超声/CT/MRI/内镜/病理报告解读等需求。用于梳理报告内容，解释异常指标和检查发现，识别... |
 | `doubao-newmedia-writing` (`skills/doubao-newmedia-writing`) | 23 | 用于生成、改写、优化并默认以飞书文档/Lark Doc 交付中文新媒体内容，覆盖小红书图文笔记、微信公众号文章、3 分钟以内短视频分镜脚本，以及上述类型的复合创作方案；明确命中创作类型后必须创建并交付飞书文档/Lark Doc。 |
 | `doubao-record` (`skills/doubao-record`) | 1 | 启动当前飞书会话的录音。当用户需要发起录音，或对录音进行中的内容询问的时候，可以使用此技能。 |
@@ -62,6 +66,7 @@
 
 | Date | Change Log | Summary |
 | --- | --- | --- |
+| 2026-07-23-203625 | [2026-07-23-203625](change-logs/2026-07-23-203625.md) | 本次同步新增 65 个文件、修改 0 个文件、删除 0 个文件。 新增 skill：doubao-academic-researcher, doubao-clinical-decision-support, doubao-industry-analysis, doubao-medical-literature-search。 受影响范围：doubao-... |
 | 2026-07-18-180002 | [2026-07-18-180002](change-logs/2026-07-18-180002.md) | 本次同步新增 25 个文件、修改 57 个文件、删除 18 个文件。 新增 skill：doubao-medical-report, doubao-record。 移除的 skill 已归档：xiaohe-medical-report。 受影响范围：doubao-medical-report, doubao-record, lark-doc, lark... |
 | 2026-07-15-172708 | [2026-07-15-172708](change-logs/2026-07-15-172708.md) | 本次同步新增 96 个文件、修改 2 个文件、删除 7 个文件。 新增 skill：doubao-academic-evaluator, doubao-academic-polish, doubao-identity, doubao-newmedia-writing, xiaohe-medical-report。 移除的 skill 已归档：douba... |
 | 2026-07-13-180002 | [2026-07-13-180002](change-logs/2026-07-13-180002.md) | 本次同步新增 57 个文件、修改 60 个文件、删除 5 个文件。 受影响范围：doubao-creative-design, doubao-creative-drama, doubao-cron-scheduler, doubao-qa, lark-approval, lark-base, lark-calendar, lark-doc, lark-... |
